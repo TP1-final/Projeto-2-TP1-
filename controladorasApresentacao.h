@@ -1,0 +1,70 @@
+#ifndef CONTROLADORASAPRESENTACAO_H_INCLUDED
+#define CONTROLADORASAPRESENTACAO_H_INCLUDED
+
+#include <conio.h>
+#include <iostream>
+#include <string.h>
+
+#include "dominios.h"
+#include "entidades.h"
+#include "interfaces.h"
+
+#define CLR_SCR system("cls");
+
+// Declarações de classes controladoras e implementações de métodos.
+
+class CntrApresentacaoControle{
+    private:
+        Cpf cpf;
+        IApresentacaoAutenticacao *cntrApresentacaoAutenticacao;
+        //IApresentacaoPessoal *cntrApresentacaoPessoal;
+        //IApresentacaoProdutosFinanceiros *cntrApresentacaoProdutosFinanceiros;
+    public:
+        void executar();
+        void setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao*);
+        //void setCntrApresentacaoPessoal(IApresentacaoPessoal*);
+        //void setCntrApresentacaoProdutosFinanceiros(IApresentacaoProdutosFinanceiros*);
+};
+
+inline void CntrApresentacaoControle::setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao *cntr){
+    cntrApresentacaoAutenticacao = cntr;
+}
+/*
+inline void CntrApresentacaoControle::setCntrApresentacaoPessoal(IApresentacaoPessoal *cntr){
+            cntrApresentacaoPessoal = cntr;
+}
+
+inline void CntrApresentacaoControle::setCntrApresentacaoProdutosFinanceiros(IApresentacaoProdutosFinanceiros *cntr){
+    cntrApresentacaoProdutosFinanceiros = cntr;
+}
+*/
+//--------------------------------------------------------------------------------------------
+
+class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao {
+    private:
+        IServicoAutenticacao *cntr;
+    public:
+        bool autenticar(Cpf*);
+        void setCntrServicoAutenticacao(IServicoAutenticacao*);
+};
+
+inline void CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAutenticacao *cntr){
+    this->cntr = cntr;
+}
+
+//-----------------------------------------------------------------------------------------------
+
+class CntrApresentacaoContas: public IApresentacaoContas {
+    private:
+        IServicoContas *cntrServicoContas;
+    public:
+        void criarConta();
+        void executar(Cpf);
+        void setCntrServicoContas(IServicoContas*);
+};
+
+inline void CntrApresentacaoContas::setCntrServicoContas(IServicoContas *cntrServicoContas){
+    this->cntrServicoContas = cntrServicoContas;
+}
+
+#endif // CONTROLADORASAPRESENTACAO_H_INCLUDED

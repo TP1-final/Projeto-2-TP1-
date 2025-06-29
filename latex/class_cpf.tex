@@ -1,0 +1,65 @@
+\doxysection{Cpf Class Reference}
+\hypertarget{class_cpf}{}\label{class_cpf}\index{Cpf@{Cpf}}
+
+
+Representa o Cadastro de Pessoa Física (CPF)  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cpf_a3325994126665941bbfbd82f6c4a1e47}{set\+Valor}} (string)
+\begin{DoxyCompactList}\small\item\em Define o valor do CPF. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_cpf_a80f35244105e4b0ed93a6bade6172e1d}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Recupera o valor do CPF. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa o Cadastro de Pessoa Física (CPF) 
+
+Esta classe implementa um CPF, que é um identificador único de usuário no sistema, validando seu formato e dígitos verificadores. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cpf_a80f35244105e4b0ed93a6bade6172e1d}\index{Cpf@{Cpf}!getValor@{getValor}}
+\index{getValor@{getValor}!Cpf@{Cpf}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_cpf_a80f35244105e4b0ed93a6bade6172e1d} 
+string Cpf\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recupera o valor do CPF. 
+
+\begin{DoxyReturn}{Returns}
+String contendo o CPF armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_cpf_a3325994126665941bbfbd82f6c4a1e47}\index{Cpf@{Cpf}!setValor@{setValor}}
+\index{setValor@{setValor}!Cpf@{Cpf}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_cpf_a3325994126665941bbfbd82f6c4a1e47} 
+void Cpf\+::set\+Valor (\begin{DoxyParamCaption}\item[{string}]{valor}{}\end{DoxyParamCaption})}
+
+
+
+Define o valor do CPF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & String contendo o CPF a ser armazenado \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Caso o valor não seja um CPF válido \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+dominios.\+cpp\end{DoxyCompactItemize}

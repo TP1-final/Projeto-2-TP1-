@@ -1,0 +1,276 @@
+# depslib dependency file v1.0
+1744222824 source:c:\users\etec0\onedrive\documentos\c”digos c++\projetotp1\dominios.cpp
+	"dominios.h"
+
+1744226557 c:\users\etec0\onedrive\documentos\c”digos c++\projetotp1\dominios.h
+	<string>
+
+1744222896 source:c:\users\etec0\onedrive\documentos\c”digos c++\projetotp1\main.cpp
+	<iostream>
+	<string>
+	"dominios.h"
+
+1747007422 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projetotp1\dominios.cpp
+	"dominios.h"
+
+1747007286 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projetotp1\dominios.h
+	<stdexcept>
+	<regex>
+	<string>
+	<unordered_set>
+
+1746903341 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projetotp1\main.cpp
+	<iostream>
+	"dominios.h"
+
+1747007422 source:c:\users\etec0\onedrive\documentos\arquivos mateus\backup trabalho\v2\projetotp1\dominios.cpp
+	"dominios.h"
+
+1747007286 c:\users\etec0\onedrive\documentos\arquivos mateus\backup trabalho\v2\projetotp1\dominios.h
+	<stdexcept>
+	<regex>
+	<string>
+	<unordered_set>
+
+1747080475 source:c:\users\etec0\onedrive\documentos\arquivos mateus\backup trabalho\v2\projetotp1\entidades.cpp
+	"entidades.h"
+
+1747083140 c:\users\etec0\onedrive\documentos\arquivos mateus\backup trabalho\v2\projetotp1\entidades.h
+	"dominios.h"
+
+1747244089 source:c:\users\etec0\onedrive\documentos\arquivos mateus\backup trabalho\v2\projetotp1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1747244495 source:c:\users\etec0\onedrive\documentos\arquivos mateus\backup trabalho\v2\projetotp1\testes.cpp
+	"testes.h"
+
+1747244089 c:\users\etec0\onedrive\documentos\arquivos mateus\backup trabalho\v2\projetotp1\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1747007422 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projetotp1v3\dominios.cpp
+	"dominios.h"
+
+1747338044 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projetotp1v3\dominios.h
+	<stdexcept>
+	<regex>
+	<string>
+	<unordered_set>
+
+1747080475 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projetotp1v3\entidades.cpp
+	"entidades.h"
+
+1747337604 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projetotp1v3\entidades.h
+	"dominios.h"
+
+1747244089 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projetotp1v3\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1747337604 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projetotp1v3\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1747244495 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projetotp1v3\testes.cpp
+	"testes.h"
+
+1747584291 source:c:\users\etec0\onedrive\documentos\projeto-tp1-v3-new-documentation\dominios.cpp
+	"dominios.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\projeto-tp1-v3-new-documentation\dominios.h
+	<stdexcept>
+	<regex>
+	<string>
+	<unordered_set>
+
+1747584291 source:c:\users\etec0\onedrive\documentos\projeto-tp1-v3-new-documentation\entidades.cpp
+	"entidades.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\projeto-tp1-v3-new-documentation\entidades.h
+	"dominios.h"
+
+1747585733 source:c:\users\etec0\onedrive\documentos\projeto-tp1-v3-new-documentation\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\projeto-tp1-v3-new-documentation\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1747584291 source:c:\users\etec0\onedrive\documentos\projeto-tp1-v3-new-documentation\testes.cpp
+	"testes.h"
+
+1747584291 source:c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\dominios.cpp
+	"dominios.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\dominios.h
+	<stdexcept>
+	<regex>
+	<string>
+	<unordered_set>
+
+1747584291 source:c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\entidades.cpp
+	"entidades.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\entidades.h
+	"dominios.h"
+
+1747585733 source:c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1747584291 source:c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\testes.cpp
+	"testes.h"
+
+1747584291 source:c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\projeto_tp1\dominios.cpp
+	"dominios.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\projeto_tp1\dominios.h
+	<stdexcept>
+	<regex>
+	<string>
+	<unordered_set>
+
+1747584291 source:c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\projeto_tp1\entidades.cpp
+	"entidades.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\projeto_tp1\entidades.h
+	"dominios.h"
+
+1747587170 source:c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\projeto_tp1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\projeto_tp1\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1747584291 source:c:\users\etec0\onedrive\documentos\projeto-tp1-t1-final\projeto_tp1\testes.cpp
+	"testes.h"
+
+1747584291 source:c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto-tp1-t1-final\projeto_tp1\dominios.cpp
+	"dominios.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto-tp1-t1-final\projeto_tp1\dominios.h
+	<stdexcept>
+	<regex>
+	<string>
+	<unordered_set>
+
+1747584291 source:c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto-tp1-t1-final\projeto_tp1\entidades.cpp
+	"entidades.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto-tp1-t1-final\projeto_tp1\entidades.h
+	"dominios.h"
+
+1747587170 source:c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto-tp1-t1-final\projeto_tp1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto-tp1-t1-final\projeto_tp1\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1747584291 source:c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto-tp1-t1-final\projeto_tp1\testes.cpp
+	"testes.h"
+
+1747584291 source:c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto_tp1\dominios.cpp
+	"dominios.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto_tp1\dominios.h
+	<stdexcept>
+	<regex>
+	<string>
+	<unordered_set>
+
+1747584291 source:c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto_tp1\entidades.cpp
+	"entidades.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto_tp1\entidades.h
+	"dominios.h"
+
+1747587170 source:c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto_tp1\main.cpp
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto_tp1\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1747584291 source:c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto_tp1\testes.cpp
+	"testes.h"
+
+1750944408 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\dominios.cpp
+	"dominios.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\dominios.h
+	<stdexcept>
+	<regex>
+	<string>
+	<unordered_set>
+
+1747584291 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\entidades.cpp
+	"entidades.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\entidades.h
+	"dominios.h"
+
+1750951113 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\main.cpp
+	<string>
+	<stdexcept>
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	"controladorasApresentacao.h"
+	"stubs.h"
+
+1747584291 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\testes.h
+	"dominios.h"
+	"entidades.h"
+
+1747584291 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\testes.cpp
+	"testes.h"
+
+1750951184 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\stubs.cpp
+	"stubs.h"
+
+1750948542 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\stubs.h
+	"dominios.h"
+	"interfaces.h"
+	<string>
+
+1750954864 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\interfaces.h
+	"dominios.h"
+	"entidades.h"
+
+1750951567 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.cpp
+	"controladorasApresentacao.h"
+
+1750946551 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.h
+	<conio.h>
+	<iostream>
+	<string.h>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+

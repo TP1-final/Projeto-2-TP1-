@@ -1,0 +1,65 @@
+\doxysection{Perfil Class Reference}
+\hypertarget{class_perfil}{}\label{class_perfil}\index{Perfil@{Perfil}}
+
+
+Define o perfil de risco do investidor.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_perfil_acbe2ac8d2685aed62c3e98289765e2bd}{set\+Valor}} (string)
+\begin{DoxyCompactList}\small\item\em Define o valor do perfil. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_perfil_acbe01534a8e170da1f846cbf9b962533}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Recupera o valor do perfil. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define o perfil de risco do investidor. 
+
+Esta classe representa o perfil de risco do investidor, limitado a três opções predefinidas que determinam suas estratégias de investimento. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_perfil_acbe01534a8e170da1f846cbf9b962533}\index{Perfil@{Perfil}!getValor@{getValor}}
+\index{getValor@{getValor}!Perfil@{Perfil}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_perfil_acbe01534a8e170da1f846cbf9b962533} 
+string Perfil\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recupera o valor do perfil. 
+
+\begin{DoxyReturn}{Returns}
+String contendo o perfil armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_perfil_acbe2ac8d2685aed62c3e98289765e2bd}\index{Perfil@{Perfil}!setValor@{setValor}}
+\index{setValor@{setValor}!Perfil@{Perfil}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_perfil_acbe2ac8d2685aed62c3e98289765e2bd} 
+void Perfil\+::set\+Valor (\begin{DoxyParamCaption}\item[{string}]{valor}{}\end{DoxyParamCaption})}
+
+
+
+Define o valor do perfil. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & String contendo o perfil a ser armazenado \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Caso o valor não seja um dos perfis permitidos \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+dominios.\+cpp\end{DoxyCompactItemize}

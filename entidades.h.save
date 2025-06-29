@@ -1,0 +1,149 @@
+#ifndef ENTIDADES_H_INCLUDED
+#define ENTIDADES_H_INCLUDED
+
+#include "dominios.h"
+
+using namespace std;
+
+//DEFINIÇÃO CONTA
+class Conta {
+    private:
+            Cpf cpf;
+            Nome nome;
+            Senha senha;                   // Declarar cada atributo da classe.
+    public:
+            void setCpf(const Cpf&);
+            void setNome(const Nome&);
+            void setSenha(const Senha&);// Declarar método set para cada atributo.
+            Cpf getCpf() const;
+            Nome getNome() const;
+            Senha getSenha() const;        // Declarar método get para cada atributo.
+};
+
+inline void Conta::setCpf(const Cpf &valor){
+    this->cpf = valor;
+}
+
+inline Cpf Conta::getCpf() const{
+    return cpf;
+}
+
+inline void Conta::setNome(const Nome &valor){
+    this->nome = valor;
+}
+
+inline Nome Conta::getNome() const{
+    return nome;
+}
+
+inline void Conta::setSenha(const Senha &valor){
+    this->senha = valor;
+}
+
+inline Senha Conta::getSenha() const{
+    return senha;
+}
+
+//DEFINIÇÃO CARTEIRA
+class Carteira{
+    private:
+        Codigo codigo;
+        Nome nome;
+        Perfil perfil;
+    public:
+        void setCodigo(const Codigo&);
+        void setNome(const Nome&);
+        void setPerfil(const Perfil&);
+        Codigo getCodigo() const;
+        Nome getNome() const;
+        Perfil getPerfil() const;
+};
+
+inline void Carteira::setCodigo(const Codigo &valor){
+    this->codigo = valor;
+}
+
+inline Codigo Carteira::getCodigo() const{
+    return codigo;
+}
+
+inline void Carteira::setNome(const Nome &valor){
+    this->nome = valor;
+}
+
+inline Nome Carteira::getNome() const{
+    return nome;
+}
+
+inline void Carteira::setPerfil(const Perfil &valor){
+    this->perfil = valor;
+}
+
+inline Perfil Carteira::getPerfil() const{
+    return perfil;
+}
+
+
+//DEFINIÇÃO ORDEM
+class Ordem{
+    private:
+        Codigo codigo;
+        CodigoNegociacao codigoNegociacao;
+        Data data;
+        Dinheiro preco;
+        Quantidade quantidade;
+    public:
+        void setCodigo(const Codigo&);
+        void setCodigoNegociacao(const CodigoNegociacao&);
+        void setData(const Data&);
+        void setPreco(const Dinheiro&);
+        void setQuantidade(const Quantidade&);
+        Codigo getCodigo() const;
+        CodigoNegociacao getCodigoNegociacao() const;
+        Data getData() const;
+        Dinheiro getPreco() const;
+        Quantidade getQuantidade() const;
+
+};
+
+inline void Ordem::setCodigo(const Codigo &valor){
+    this->codigo = valor;
+}
+
+inline Codigo Ordem::getCodigo() const{
+    return codigo;
+}
+
+inline void Ordem::setCodigoNegociacao(const CodigoNegociacao &valor){
+    this->codigoNegociacao = valor;
+}
+
+inline CodigoNegociacao Ordem::getCodigoNegociacao() const{
+    return codigoNegociacao;
+}
+
+inline void Ordem::setData(const Data &valor){
+    this->data = valor;
+}
+
+inline Data Ordem::getData() const{
+    return data;
+}
+
+inline void Ordem::setPreco(const Dinheiro &valor){
+    this->preco = valor;
+}
+
+inline Dinheiro Ordem::getPreco() const{
+    return preco;
+}
+
+inline void Ordem::setQuantidade(const Quantidade &valor){
+    this->quantidade = valor;
+}
+
+inline Quantidade Ordem::getQuantidade() const{
+    return quantidade;
+}
+
+#endif // ENTIDADES_H_INCLUDED

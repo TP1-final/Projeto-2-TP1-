@@ -1,0 +1,77 @@
+\chapter{Sistema de Negociação Financeira}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Sistema de Negociação Financeira@{Sistema de Negociação Financeira}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Visão Geral}{Visão Geral}}\label{md__r_e_a_d_m_e_autotoc_md1}
+Este projeto implementa um sistema de negociação financeira em C++ que permite gerenciar contas, carteiras e ordens de negociação. O sistema foi desenvolvido utilizando princípios de programação orientada a objetos e inclui validações rigorosas para todos os dados de entrada.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Estrutura do Projeto}{Estrutura do Projeto}}\label{md__r_e_a_d_m_e_autotoc_md2}
+O projeto está organizado em três camadas principais\+:\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{\texorpdfstring{1. Domínios}{1. Domínios}}\label{md__r_e_a_d_m_e_autotoc_md3}
+Classes que representam tipos de dados básicos com validações específicas\+:
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{class_codigo}{Codigo}}}\+: Representa códigos de identificação
+\item {\bfseries{\doxylink{class_codigo_negociacao}{Codigo\+Negociacao}}}\+: Códigos específicos para negociações
+\item {\bfseries{\doxylink{class_cpf}{Cpf}}}\+: Validação de CPF
+\item {\bfseries{\doxylink{class_data}{Data}}}\+: Validação de datas no formato AAAAMMDD
+\item {\bfseries{\doxylink{class_nome}{Nome}}}\+: Validação de nomes
+\item {\bfseries{\doxylink{class_perfil}{Perfil}}}\+: \doxylink{class_perfil}{Perfil} de investidor (Conservador, Moderado, Arrojado)
+\item {\bfseries{\doxylink{class_dinheiro}{Dinheiro}}}\+: Valores monetários
+\item {\bfseries{\doxylink{class_quantidade}{Quantidade}}}\+: Quantidades numéricas
+\item {\bfseries{\doxylink{class_senha}{Senha}}}\+: Validação de senhas
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{\texorpdfstring{2. Entidades}{2. Entidades}}\label{md__r_e_a_d_m_e_autotoc_md4}
+Classes que representam os objetos de negócio do sistema\+:
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{class_conta}{Conta}}}\+: Representa uma conta de usuário (CPF, \doxylink{class_nome}{Nome}, \doxylink{class_senha}{Senha})
+\item {\bfseries{\doxylink{class_carteira}{Carteira}}}\+: Representa uma carteira de investimentos (Código, \doxylink{class_nome}{Nome}, \doxylink{class_perfil}{Perfil})
+\item {\bfseries{\doxylink{class_ordem}{Ordem}}}\+: Representa uma ordem de negociação (Código, \doxylink{class_codigo_negociacao}{Codigo\+Negociacao}, \doxylink{class_data}{Data}, Preço, \doxylink{class_quantidade}{Quantidade})
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{\texorpdfstring{3. Testes}{3. Testes}}\label{md__r_e_a_d_m_e_autotoc_md5}
+Classes para testes unitários de todas as classes de domínio e entidade\+:
+\begin{DoxyItemize}
+\item Testes de unidade para cada classe de domínio (\doxylink{class_t_u_codigo}{TUCodigo}, \doxylink{class_t_u_codigo_negociacao}{TUCodigo\+Negociacao}, etc.)
+\item Testes de unidade para cada entidade (\doxylink{class_t_u_conta}{TUConta}, \doxylink{class_t_u_carteira}{TUCarteira}, \doxylink{class_t_u_ordem}{TUOrdem})
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysection{\texorpdfstring{Funcionalidades}{Funcionalidades}}\label{md__r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyItemize}
+\item Validação de dados de entrada com regras específicas para cada tipo de dado
+\item Criação e gerenciamento de contas de usuário
+\item Criação e gerenciamento de carteiras de investimento
+\item Criação e gerenciamento de ordens de negociação
+\item Testes unitários para garantir a integridade do sistema
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysection{\texorpdfstring{Requisitos}{Requisitos}}\label{md__r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyItemize}
+\item Compilador C++ com suporte a C++11 ou superior
+\item Biblioteca padrão C++
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysection{\texorpdfstring{Como Compilar e Executar}{Como Compilar e Executar}}\label{md__r_e_a_d_m_e_autotoc_md8}
+O projeto utiliza o Code\+::\+Blocks como IDE, mas pode ser compilado com qualquer compilador C++ compatível\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ Compilar\ com\ g++}
+\DoxyCodeLine{g++\ -\/std=c++11\ main.cpp\ dominios.cpp\ entidades.cpp\ testes.cpp\ -\/o\ sistema\_negociacao}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Executar}
+\DoxyCodeLine{./sistema\_negociacao}
+
+\end{DoxyCode}
+
+
+Ou abra o arquivo {\ttfamily Projeto\+TP1.\+cbp} no Code\+::\+Blocks e execute o projeto.\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysection{\texorpdfstring{Validações Implementadas}{Validações Implementadas}}\label{md__r_e_a_d_m_e_autotoc_md9}
+
+\begin{DoxyItemize}
+\item {\bfseries{Código}}\+: Formato específico para códigos de identificação
+\item {\bfseries{Código de Negociação}}\+: Formato específico para códigos de negociação
+\item {\bfseries{CPF}}\+: Validação de dígitos verificadores e formato
+\item {\bfseries{\doxylink{class_data}{Data}}}\+: Validação de datas válidas, incluindo anos bissextos
+\item {\bfseries{\doxylink{class_nome}{Nome}}}\+: Validação de formato de nomes
+\item {\bfseries{\doxylink{class_perfil}{Perfil}}}\+: Validação de tipos de perfil de investidor
+\item {\bfseries{\doxylink{class_dinheiro}{Dinheiro}}}\+: Validação de valores monetários
+\item {\bfseries{\doxylink{class_quantidade}{Quantidade}}}\+: Validação de quantidades numéricas
+\item {\bfseries{\doxylink{class_senha}{Senha}}}\+: Validação de formato e segurança de senhas
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysection{\texorpdfstring{Arquitetura do Sistema}{Arquitetura do Sistema}}\label{md__r_e_a_d_m_e_autotoc_md10}
+O sistema segue o padrão de projeto de camadas, separando claramente\+:
+\begin{DoxyItemize}
+\item {\bfseries{Domínios}}\+: Implementação de tipos de dados básicos com validações
+\item {\bfseries{Entidades}}\+: Objetos de negócio compostos por domínios
+\item {\bfseries{Testes}}\+: Validação da integridade do sistema
+\end{DoxyItemize}
+
+Esta arquitetura facilita a manutenção, extensão e teste do sistema. 

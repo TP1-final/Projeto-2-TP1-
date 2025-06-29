@@ -1,0 +1,123 @@
+\doxysection{Conta Class Reference}
+\hypertarget{class_conta}{}\label{class_conta}\index{Conta@{Conta}}
+
+
+Representa uma conta de usuário no sistema.  
+
+
+
+
+{\ttfamily \#include $<$entidades.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_conta_adbaa924bb3966c710a422f738b054ba5}{set\+Cpf}} (const \mbox{\hyperlink{class_cpf}{Cpf}} \&)
+\begin{DoxyCompactList}\small\item\em Define o CPF associado à conta. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_conta_a9160a8c46fdf894ca6c3fdf98f8faee1}{set\+Nome}} (const \mbox{\hyperlink{class_nome}{Nome}} \&)
+\begin{DoxyCompactList}\small\item\em Define o nome do usuário da conta. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_conta_a16585ba03471ca5fc626332025e558cf}{set\+Senha}} (const \mbox{\hyperlink{class_senha}{Senha}} \&)
+\begin{DoxyCompactList}\small\item\em Define a senha para acesso à conta. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cpf}{Cpf}} \mbox{\hyperlink{class_conta_a3ddd948f1e8cc281862bf752c858f015}{get\+Cpf}} () const
+\begin{DoxyCompactList}\small\item\em Recupera o CPF associado à conta. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_nome}{Nome}} \mbox{\hyperlink{class_conta_aac660b7dd90148ff41f89f3732f0d52b}{get\+Nome}} () const
+\begin{DoxyCompactList}\small\item\em Recupera o nome do usuário da conta. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_senha}{Senha}} \mbox{\hyperlink{class_conta_aa36f37646e006dc200f82bc9f384d79b}{get\+Senha}} () const
+\begin{DoxyCompactList}\small\item\em Recupera a senha da conta. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa uma conta de usuário no sistema. 
+
+Esta classe implementa uma conta que armazena informações básicas do usuário, incluindo seu identificador único (CPF), nome e credenciais de acesso (senha). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_conta_a3ddd948f1e8cc281862bf752c858f015}\index{Conta@{Conta}!getCpf@{getCpf}}
+\index{getCpf@{getCpf}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{getCpf()}{getCpf()}}
+{\footnotesize\ttfamily \label{class_conta_a3ddd948f1e8cc281862bf752c858f015} 
+\mbox{\hyperlink{class_cpf}{Cpf}} Conta\+::get\+Cpf (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recupera o CPF associado à conta. 
+
+\begin{DoxyReturn}{Returns}
+Objeto da classe \doxylink{class_cpf}{Cpf} contendo o CPF armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_conta_aac660b7dd90148ff41f89f3732f0d52b}\index{Conta@{Conta}!getNome@{getNome}}
+\index{getNome@{getNome}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{getNome()}{getNome()}}
+{\footnotesize\ttfamily \label{class_conta_aac660b7dd90148ff41f89f3732f0d52b} 
+\mbox{\hyperlink{class_nome}{Nome}} Conta\+::get\+Nome (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recupera o nome do usuário da conta. 
+
+\begin{DoxyReturn}{Returns}
+Objeto da classe \doxylink{class_nome}{Nome} contendo o nome armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_conta_aa36f37646e006dc200f82bc9f384d79b}\index{Conta@{Conta}!getSenha@{getSenha}}
+\index{getSenha@{getSenha}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{getSenha()}{getSenha()}}
+{\footnotesize\ttfamily \label{class_conta_aa36f37646e006dc200f82bc9f384d79b} 
+\mbox{\hyperlink{class_senha}{Senha}} Conta\+::get\+Senha (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recupera a senha da conta. 
+
+\begin{DoxyReturn}{Returns}
+Objeto da classe \doxylink{class_senha}{Senha} contendo a senha armazenada 
+\end{DoxyReturn}
+\Hypertarget{class_conta_adbaa924bb3966c710a422f738b054ba5}\index{Conta@{Conta}!setCpf@{setCpf}}
+\index{setCpf@{setCpf}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{setCpf()}{setCpf()}}
+{\footnotesize\ttfamily \label{class_conta_adbaa924bb3966c710a422f738b054ba5} 
+void Conta\+::set\+Cpf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_cpf}{Cpf}} \&}]{valor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define o CPF associado à conta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Objeto da classe \doxylink{class_cpf}{Cpf} com o valor a ser associado \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_conta_a9160a8c46fdf894ca6c3fdf98f8faee1}\index{Conta@{Conta}!setNome@{setNome}}
+\index{setNome@{setNome}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{setNome()}{setNome()}}
+{\footnotesize\ttfamily \label{class_conta_a9160a8c46fdf894ca6c3fdf98f8faee1} 
+void Conta\+::set\+Nome (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_nome}{Nome}} \&}]{valor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define o nome do usuário da conta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Objeto da classe \doxylink{class_nome}{Nome} com o valor a ser associado \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_conta_a16585ba03471ca5fc626332025e558cf}\index{Conta@{Conta}!setSenha@{setSenha}}
+\index{setSenha@{setSenha}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{setSenha()}{setSenha()}}
+{\footnotesize\ttfamily \label{class_conta_a16585ba03471ca5fc626332025e558cf} 
+void Conta\+::set\+Senha (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_senha}{Senha}} \&}]{valor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define a senha para acesso à conta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Objeto da classe \doxylink{class_senha}{Senha} com o valor a ser associado \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{entidades_8h}{entidades.\+h}}\end{DoxyCompactItemize}

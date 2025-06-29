@@ -1,0 +1,228 @@
+#ifndef TESTES_H_INCLUDED
+#define TESTES_H_INCLUDED
+
+#include "dominios.h"
+#include "entidades.h"
+
+//DEFINIÇÃO TESTES UNIDADE DE DOMÍNIO
+//TU CÓDIGO
+class TUCodigo {
+    private:
+        const static string VALOR_VALIDO;   
+        const static string VALOR_INVALIDO;   
+        Codigo *codigo;                        
+        int estado;                             
+        void setUp();                          
+        void tearDown();                      
+        void testarCenarioValorValido();          
+        void testarCenarioValorInvalido();             
+
+    public:
+        const static int SUCESSO =  1;         
+        const static int FALHA   = 0;          
+        int run();                             
+};
+
+//TU CÓDIGO NEGOCIAÇÃO
+class TUCodigoNegociacao{
+    private:
+        const static string VALOR_VALIDO;
+        const static string VALOR_INVALIDO;
+        CodigoNegociacao *codigoNegociacao;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioValorValido();
+        void testarCenarioValorInvalido();
+
+    public:
+        const static int SUCESSO = 1;
+        const static int FALHA = 0;
+        int run();
+
+};
+
+//TU CPF
+
+class TUCpf{
+    private:
+        const static string VALOR_VALIDO;
+        const static string VALOR_INVALIDO;
+        Cpf *cpf;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioValorValido();
+        void testarCenarioValorInvalido();
+    public:
+        const static int SUCESSO = 1;
+        const static int FALHA = 0;
+        int run();
+
+};
+
+//TU DATA
+class TUData{
+    private:
+        const static string VALOR_VALIDO;
+        const static string VALOR_INVALIDO;
+        Data *data;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioValorValido();
+        void testarCenarioValorInvalido();
+    public:
+        const static int SUCESSO = 1;
+        const static int FALHA = 0;
+        int run();
+
+};
+
+//TU NOME
+class TUNome{
+    private:
+        const static string VALOR_VALIDO;
+        const static string VALOR_INVALIDO;
+        Nome *nome;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioValorValido();
+        void testarCenarioValorInvalido();
+    public:
+        const static int SUCESSO = 1;
+        const static int FALHA = 0;
+        int run();
+
+};
+
+//TU PERFIL
+class TUPerfil{
+    private:
+        const static string VALOR_VALIDO;
+        const static string VALOR_INVALIDO;
+        Perfil *perfil;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioValorValido();
+        void testarCenarioValorInvalido();
+    public:
+        const static int SUCESSO = 1;
+        const static int FALHA = 0;
+        int run();
+
+};
+
+//TU DINHEIRO
+class TUDinheiro{
+    private:
+        constexpr static float VALOR_VALIDO = 1;
+        constexpr static float VALOR_INVALIDO = -1;
+        Dinheiro *dinheiro;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioValorValido();
+        void testarCenarioValorInvalido();
+    public:
+        const static int SUCESSO = 1;
+        const static int FALHA = 0;
+        int run();
+
+};
+
+//TU QUANTIDADE
+class TUQuantidade{
+    private:
+        const static int VALOR_VALIDO = 1;
+        const static int VALOR_INVALIDO = -1;
+        Quantidade *quantidade;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioValorValido();
+        void testarCenarioValorInvalido();
+    public:
+        const static int SUCESSO = 1;
+        const static int FALHA = 0;
+        int run();
+
+};
+
+//TU SENHA
+class TUSenha{
+    private:
+        const static string VALOR_VALIDO;
+        const static string VALOR_INVALIDO;
+        Senha *senha;
+        int estado;
+        void setUp();
+        void tearDown();
+        void testarCenarioValorValido();
+        void testarCenarioValorInvalido();
+    public:
+        const static int SUCESSO = 1;
+        const static int FALHA = 0;
+        int run();
+
+};
+
+//DEFINIÇÃO TESTES UNIDADE DE ENTIDADE
+//TU CONTA
+
+class TUConta{
+    private:
+        const static string VALOR_VALIDO_CPF;
+        const static string VALOR_VALIDO_NOME;
+        const static string VALOR_VALIDO_SENHA; 
+        Conta *conta;                      
+        int estado;                             
+        void setUp();                           
+        void tearDown();                       
+        void testarCenarioValorValido();           
+    public:
+        const static int SUCESSO =  1;          
+        const static int FALHA   = 0;          
+        int run();                              
+};
+
+//TU CARTEIRA
+class TUCarteira{
+    private:
+        const static string VALOR_VALIDO_CODIGO;
+        const static string VALOR_VALIDO_NOME;
+        const static string VALOR_VALIDO_PERFIL; 
+        Carteira *carteira;                       
+        int estado;                            
+        void setUp();                           
+        void tearDown();                        
+        void testarCenarioValorValido();            
+    public:
+        const static int SUCESSO =  1;         
+        const static int FALHA   = 0;          
+        int run();                              
+};
+
+//TU ORDEM
+class TUOrdem{
+    private:
+        const static string VALOR_VALIDO_CODIGO;
+        const static string VALOR_VALIDO_CODIGONEGOCIACAO;
+        const static string VALOR_VALIDO_DATA;
+        constexpr static float VALOR_VALIDO_DINHEIRO = 1;
+        const static int VALOR_VALIDO_QUANTIDADE = 1;
+        Ordem *ordem;                       
+        int estado;                             
+        void setUp();                           
+        void tearDown();                        
+        void testarCenarioValorValido();          
+    public:
+        const static int SUCESSO =  1;          
+        const static int FALHA   = 0;          
+        int run();                             
+};
+
+#endif // TESTES_H_INCLUDED
+

@@ -1,0 +1,65 @@
+\doxysection{Senha Class Reference}
+\hypertarget{class_senha}{}\label{class_senha}\index{Senha@{Senha}}
+
+
+Armazena e valida a senha do usuário.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_senha_a379d90c214392ccb42aaf49e3d39e112}{set\+Valor}} (string)
+\begin{DoxyCompactList}\small\item\em Define o valor da senha. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_senha_a701d441609c24943de42442ceb0f5e43}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Recupera o valor da senha. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Armazena e valida a senha do usuário. 
+
+Esta classe implementa uma senha segura, aplicando regras específicas para garantir um nível adequado de segurança na autenticação. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_senha_a701d441609c24943de42442ceb0f5e43}\index{Senha@{Senha}!getValor@{getValor}}
+\index{getValor@{getValor}!Senha@{Senha}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_senha_a701d441609c24943de42442ceb0f5e43} 
+string Senha\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recupera o valor da senha. 
+
+\begin{DoxyReturn}{Returns}
+String contendo a senha armazenada 
+\end{DoxyReturn}
+\Hypertarget{class_senha_a379d90c214392ccb42aaf49e3d39e112}\index{Senha@{Senha}!setValor@{setValor}}
+\index{setValor@{setValor}!Senha@{Senha}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_senha_a379d90c214392ccb42aaf49e3d39e112} 
+void Senha\+::set\+Valor (\begin{DoxyParamCaption}\item[{string}]{valor}{}\end{DoxyParamCaption})}
+
+
+
+Define o valor da senha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & String contendo a senha a ser armazenada \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Caso a senha não atenda aos requisitos de segurança \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+dominios.\+cpp\end{DoxyCompactItemize}

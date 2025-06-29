@@ -1,0 +1,67 @@
+\doxysection{Data Class Reference}
+\hypertarget{class_data}{}\label{class_data}\index{Data@{Data}}
+
+
+Representa uma data no formato AAAAMMDD.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_data_a51e2288cf8b1a3f02908d86cc5cd2384}{set\+Valor}} (const string \&data)
+\begin{DoxyCompactList}\small\item\em Define o valor da data. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_data_a8dd738e6c3e7ef96784b4e6b6c0cec61}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Recupera o valor da data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa uma data no formato AAAAMMDD. 
+
+Esta classe implementa uma data, garantindo sua validade de acordo com o calendário, incluindo verificação de anos bissextos. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_data_a8dd738e6c3e7ef96784b4e6b6c0cec61}\index{Data@{Data}!getValor@{getValor}}
+\index{getValor@{getValor}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_data_a8dd738e6c3e7ef96784b4e6b6c0cec61} 
+string Data\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Recupera o valor da data. 
+
+Retorna a data no formato AAAAMMDD.
+
+\begin{DoxyReturn}{Returns}
+String contendo a data no formato AAAAMMDD 
+\end{DoxyReturn}
+\Hypertarget{class_data_a51e2288cf8b1a3f02908d86cc5cd2384}\index{Data@{Data}!setValor@{setValor}}
+\index{setValor@{setValor}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_data_a51e2288cf8b1a3f02908d86cc5cd2384} 
+void Data\+::set\+Valor (\begin{DoxyParamCaption}\item[{const string \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Define o valor da data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & String contendo a data no formato AAAAMMDD \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Caso a data seja inválida \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+dominios.\+cpp\end{DoxyCompactItemize}

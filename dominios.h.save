@@ -1,0 +1,149 @@
+#ifndef DOMINIOS_H_INCLUDED
+#define DOMINIOS_H_INCLUDED
+
+#include <stdexcept>
+#include <regex>
+#include <string>
+#include <unordered_set>
+
+using namespace std;
+
+//DEFINIÇÃO CÓDIGO
+class Codigo{
+    private:
+        static const regex padrao;
+        string valor;
+        void validar(string);
+    public:
+        void setValor(string);
+        string getValor();
+};
+
+inline string Codigo::getValor(){
+    return valor;
+}
+
+//DEFINIÇÃO CÓDIGO DE NEGOCIAÇÃO
+class CodigoNegociacao{
+    private:
+        static const regex padrao;
+        string valor;
+        void validar(string);
+    public:
+        void setValor(string);
+        string getValor();
+};
+
+inline string CodigoNegociacao::getValor(){
+    return valor;
+}
+
+//DEFINIÇÃO CPF
+class Cpf{
+    private:
+        static const regex padrao;
+        string valor;
+        void validar(string);
+    public:
+        void setValor(string);
+        string getValor();
+};
+
+inline string Cpf::getValor(){
+    return valor;
+}
+
+//DEFINIÇÃO DATA
+// Classe que representa uma data no formato AAAAMMDD.
+// A data é validada considerando os anos bissextos.
+class Data {
+    private:
+        int ano;  //< Ano da data (AAAA)
+        int mes;  //< Mês da data (MM)
+        int dia;  //< Dia da data (DD)
+        // Verifica se a data é válida.
+        bool validar(const std::string& data);
+        // Verifica se o ano é bissexto.
+        bool ehBissexto(int ano);
+
+public:
+    // Define o valor da data. Lança exceção em caso de data inválida.
+    void setValor(const std::string& data);
+    // Retorna a data no formato AAAAMMDD.
+    std::string getValor();
+};
+
+
+//DEFINIÇÃO NOME
+class Nome{
+    private:
+        static const regex padrao;
+        string valor;
+        void validar(string);
+    public:
+        void setValor(string);
+        string getValor();
+};
+
+inline string Nome::getValor(){
+    return valor;
+}
+
+//DEFINIÇÃO PERFIL
+class Perfil{
+    private:
+        string valor;
+        void validar(string);
+    public:
+        void setValor(string);
+        string getValor();
+};
+
+inline string Perfil::getValor(){
+    return valor;
+}
+
+//DEFINIÇÃO DINHEIRO
+class Dinheiro{
+    private:
+        float valor;
+        void validar(float);
+    public:
+        void setValor(float);
+        float getValor();
+};
+
+//DEFINIÇÃO QUANTIDADE
+class Quantidade{
+    private:
+        int valor;
+        void validar(int);
+    public:
+        void setValor(int);
+        int getValor();
+};
+
+inline int Quantidade::getValor(){
+    return valor;
+}
+
+inline float Dinheiro::getValor(){
+    return valor;
+}
+
+//DEFINIÇÃO SENHA
+class Senha{
+    private:
+        static const regex padrao;
+        string valor;
+        void validar(string);
+    public:
+        void setValor(string);
+        string getValor();
+};
+
+inline string Senha::getValor(){
+    return valor;
+}
+
+#endif // DOMINIOS_H_INCLUDED

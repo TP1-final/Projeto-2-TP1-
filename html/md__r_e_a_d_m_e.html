@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sistema financeiro - biblioteca de classes: Sistema de Negociação Financeira</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Sistema financeiro - biblioteca de classes<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Sistema de Negociação Financeira</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Visão Geral</h1>
+<p>Este projeto implementa um sistema de negociação financeira em C++ que permite gerenciar contas, carteiras e ordens de negociação. O sistema foi desenvolvido utilizando princípios de programação orientada a objetos e inclui validações rigorosas para todos os dados de entrada.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Estrutura do Projeto</h1>
+<p>O projeto está organizado em três camadas principais:</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+1. Domínios</h2>
+<p>Classes que representam tipos de dados básicos com validações específicas:</p><ul>
+<li><b><a class="el" href="class_codigo.html" title="Representa identificadores internos como contas ou carteiras.">Codigo</a></b>: Representa códigos de identificação</li>
+<li><b><a class="el" href="class_codigo_negociacao.html" title="Define códigos utilizados para representar papéis negociáveis.">CodigoNegociacao</a></b>: Códigos específicos para negociações</li>
+<li><b><a class="el" href="class_cpf.html" title="Representa o Cadastro de Pessoa Física (CPF)">Cpf</a></b>: Validação de CPF</li>
+<li><b><a class="el" href="class_data.html" title="Representa uma data no formato AAAAMMDD.">Data</a></b>: Validação de datas no formato AAAAMMDD</li>
+<li><b><a class="el" href="class_nome.html" title="Representa nomes de contas, usuários ou carteiras.">Nome</a></b>: Validação de nomes</li>
+<li><b><a class="el" href="class_perfil.html" title="Define o perfil de risco do investidor.">Perfil</a></b>: <a class="el" href="class_perfil.html" title="Define o perfil de risco do investidor.">Perfil</a> de investidor (Conservador, Moderado, Arrojado)</li>
+<li><b><a class="el" href="class_dinheiro.html" title="Representa valores financeiros no sistema.">Dinheiro</a></b>: Valores monetários</li>
+<li><b><a class="el" href="class_quantidade.html" title="Representa a quantidade de papéis em uma ordem.">Quantidade</a></b>: Quantidades numéricas</li>
+<li><b><a class="el" href="class_senha.html" title="Armazena e valida a senha do usuário.">Senha</a></b>: Validação de senhas</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+2. Entidades</h2>
+<p>Classes que representam os objetos de negócio do sistema:</p><ul>
+<li><b><a class="el" href="class_conta.html" title="Representa uma conta de usuário no sistema.">Conta</a></b>: Representa uma conta de usuário (CPF, <a class="el" href="class_nome.html" title="Representa nomes de contas, usuários ou carteiras.">Nome</a>, <a class="el" href="class_senha.html" title="Armazena e valida a senha do usuário.">Senha</a>)</li>
+<li><b><a class="el" href="class_carteira.html" title="Representa uma carteira de investimentos.">Carteira</a></b>: Representa uma carteira de investimentos (Código, <a class="el" href="class_nome.html" title="Representa nomes de contas, usuários ou carteiras.">Nome</a>, <a class="el" href="class_perfil.html" title="Define o perfil de risco do investidor.">Perfil</a>)</li>
+<li><b><a class="el" href="class_ordem.html" title="Representa uma ordem de compra ou venda de ativo.">Ordem</a></b>: Representa uma ordem de negociação (Código, <a class="el" href="class_codigo_negociacao.html" title="Define códigos utilizados para representar papéis negociáveis.">CodigoNegociacao</a>, <a class="el" href="class_data.html" title="Representa uma data no formato AAAAMMDD.">Data</a>, Preço, <a class="el" href="class_quantidade.html" title="Representa a quantidade de papéis em uma ordem.">Quantidade</a>)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+3. Testes</h2>
+<p>Classes para testes unitários de todas as classes de domínio e entidade:</p><ul>
+<li>Testes de unidade para cada classe de domínio (<a class="el" href="class_t_u_codigo.html">TUCodigo</a>, <a class="el" href="class_t_u_codigo_negociacao.html">TUCodigoNegociacao</a>, etc.)</li>
+<li>Testes de unidade para cada entidade (<a class="el" href="class_t_u_conta.html">TUConta</a>, <a class="el" href="class_t_u_carteira.html">TUCarteira</a>, <a class="el" href="class_t_u_ordem.html">TUOrdem</a>)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Funcionalidades</h1>
+<ul>
+<li>Validação de dados de entrada com regras específicas para cada tipo de dado</li>
+<li>Criação e gerenciamento de contas de usuário</li>
+<li>Criação e gerenciamento de carteiras de investimento</li>
+<li>Criação e gerenciamento de ordens de negociação</li>
+<li>Testes unitários para garantir a integridade do sistema</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Requisitos</h1>
+<ul>
+<li>Compilador C++ com suporte a C++11 ou superior</li>
+<li>Biblioteca padrão C++</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Como Compilar e Executar</h1>
+<p>O projeto utiliza o Code::Blocks como IDE, mas pode ser compilado com qualquer compilador C++ compatível:</p>
+<div class="fragment"><div class="line"># Compilar com g++</div>
+<div class="line">g++ -std=c++11 main.cpp dominios.cpp entidades.cpp testes.cpp -o sistema_negociacao</div>
+<div class="line"> </div>
+<div class="line"># Executar</div>
+<div class="line">./sistema_negociacao</div>
+</div><!-- fragment --><p>Ou abra o arquivo <code>ProjetoTP1.cbp</code> no Code::Blocks e execute o projeto.</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Validações Implementadas</h1>
+<ul>
+<li><b>Código</b>: Formato específico para códigos de identificação</li>
+<li><b>Código de Negociação</b>: Formato específico para códigos de negociação</li>
+<li><b>CPF</b>: Validação de dígitos verificadores e formato</li>
+<li><b><a class="el" href="class_data.html" title="Representa uma data no formato AAAAMMDD.">Data</a></b>: Validação de datas válidas, incluindo anos bissextos</li>
+<li><b><a class="el" href="class_nome.html" title="Representa nomes de contas, usuários ou carteiras.">Nome</a></b>: Validação de formato de nomes</li>
+<li><b><a class="el" href="class_perfil.html" title="Define o perfil de risco do investidor.">Perfil</a></b>: Validação de tipos de perfil de investidor</li>
+<li><b><a class="el" href="class_dinheiro.html" title="Representa valores financeiros no sistema.">Dinheiro</a></b>: Validação de valores monetários</li>
+<li><b><a class="el" href="class_quantidade.html" title="Representa a quantidade de papéis em uma ordem.">Quantidade</a></b>: Validação de quantidades numéricas</li>
+<li><b><a class="el" href="class_senha.html" title="Armazena e valida a senha do usuário.">Senha</a></b>: Validação de formato e segurança de senhas</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Arquitetura do Sistema</h1>
+<p>O sistema segue o padrão de projeto de camadas, separando claramente:</p><ul>
+<li><b>Domínios</b>: Implementação de tipos de dados básicos com validações</li>
+<li><b>Entidades</b>: Objetos de negócio compostos por domínios</li>
+<li><b>Testes</b>: Validação da integridade do sistema</li>
+</ul>
+<p>Esta arquitetura facilita a manutenção, extensão e teste do sistema. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

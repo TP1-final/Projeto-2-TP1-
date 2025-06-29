@@ -1,0 +1,65 @@
+\doxysection{Codigo Class Reference}
+\hypertarget{class_codigo}{}\label{class_codigo}\index{Codigo@{Codigo}}
+
+
+Representa identificadores internos como contas ou carteiras.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_codigo_afdc4d9c6e42358cd0d48001d4c671584}{set\+Valor}} (string)
+\begin{DoxyCompactList}\small\item\em Define o valor do código. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_codigo_aa78a03ad29c1cb6a3e953db2137d6278}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Recupera o valor do código. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa identificadores internos como contas ou carteiras. 
+
+Esta classe implementa um código padronizado que segue regras específicas de formato, sendo utilizado para identificação única de elementos no sistema. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_codigo_aa78a03ad29c1cb6a3e953db2137d6278}\index{Codigo@{Codigo}!getValor@{getValor}}
+\index{getValor@{getValor}!Codigo@{Codigo}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_codigo_aa78a03ad29c1cb6a3e953db2137d6278} 
+string Codigo\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recupera o valor do código. 
+
+\begin{DoxyReturn}{Returns}
+String contendo o código armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_codigo_afdc4d9c6e42358cd0d48001d4c671584}\index{Codigo@{Codigo}!setValor@{setValor}}
+\index{setValor@{setValor}!Codigo@{Codigo}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_codigo_afdc4d9c6e42358cd0d48001d4c671584} 
+void Codigo\+::set\+Valor (\begin{DoxyParamCaption}\item[{string}]{valor}{}\end{DoxyParamCaption})}
+
+
+
+Define o valor do código. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & String contendo o código a ser armazenado \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Caso o valor não esteja no formato válido \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+dominios.\+cpp\end{DoxyCompactItemize}

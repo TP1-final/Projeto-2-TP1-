@@ -1,0 +1,123 @@
+\doxysection{Carteira Class Reference}
+\hypertarget{class_carteira}{}\label{class_carteira}\index{Carteira@{Carteira}}
+
+
+Representa uma carteira de investimentos.  
+
+
+
+
+{\ttfamily \#include $<$entidades.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_carteira_a1912b3a839c6ecbc335a57180b4b51bf}{set\+Codigo}} (const \mbox{\hyperlink{class_codigo}{Codigo}} \&)
+\begin{DoxyCompactList}\small\item\em Define o código identificador da carteira. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_carteira_a27447261830ae29183f1bec1360b4ddb}{set\+Nome}} (const \mbox{\hyperlink{class_nome}{Nome}} \&)
+\begin{DoxyCompactList}\small\item\em Define o nome da carteira. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_carteira_a74bf54a70371799984743156ac667e24}{set\+Perfil}} (const \mbox{\hyperlink{class_perfil}{Perfil}} \&)
+\begin{DoxyCompactList}\small\item\em Define o perfil de risco da carteira. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_codigo}{Codigo}} \mbox{\hyperlink{class_carteira_a847fff1e04d680ac8d82d57e35f5a9ec}{get\+Codigo}} () const
+\begin{DoxyCompactList}\small\item\em Recupera o código identificador da carteira. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_nome}{Nome}} \mbox{\hyperlink{class_carteira_a6b5b193b73f1c00e190bc753e2eeda30}{get\+Nome}} () const
+\begin{DoxyCompactList}\small\item\em Recupera o nome da carteira. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_perfil}{Perfil}} \mbox{\hyperlink{class_carteira_a0efe6c8ceff14f580ebb6aad305acfcd}{get\+Perfil}} () const
+\begin{DoxyCompactList}\small\item\em Recupera o perfil de risco da carteira. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa uma carteira de investimentos. 
+
+Esta classe implementa uma carteira que agrupa investimentos de acordo com um perfil de risco específico, identificada por um código único e nome. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_carteira_a847fff1e04d680ac8d82d57e35f5a9ec}\index{Carteira@{Carteira}!getCodigo@{getCodigo}}
+\index{getCodigo@{getCodigo}!Carteira@{Carteira}}
+\doxysubsubsection{\texorpdfstring{getCodigo()}{getCodigo()}}
+{\footnotesize\ttfamily \label{class_carteira_a847fff1e04d680ac8d82d57e35f5a9ec} 
+\mbox{\hyperlink{class_codigo}{Codigo}} Carteira\+::get\+Codigo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recupera o código identificador da carteira. 
+
+\begin{DoxyReturn}{Returns}
+Objeto da classe \doxylink{class_codigo}{Codigo} contendo o código armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_carteira_a6b5b193b73f1c00e190bc753e2eeda30}\index{Carteira@{Carteira}!getNome@{getNome}}
+\index{getNome@{getNome}!Carteira@{Carteira}}
+\doxysubsubsection{\texorpdfstring{getNome()}{getNome()}}
+{\footnotesize\ttfamily \label{class_carteira_a6b5b193b73f1c00e190bc753e2eeda30} 
+\mbox{\hyperlink{class_nome}{Nome}} Carteira\+::get\+Nome (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recupera o nome da carteira. 
+
+\begin{DoxyReturn}{Returns}
+Objeto da classe \doxylink{class_nome}{Nome} contendo o nome armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_carteira_a0efe6c8ceff14f580ebb6aad305acfcd}\index{Carteira@{Carteira}!getPerfil@{getPerfil}}
+\index{getPerfil@{getPerfil}!Carteira@{Carteira}}
+\doxysubsubsection{\texorpdfstring{getPerfil()}{getPerfil()}}
+{\footnotesize\ttfamily \label{class_carteira_a0efe6c8ceff14f580ebb6aad305acfcd} 
+\mbox{\hyperlink{class_perfil}{Perfil}} Carteira\+::get\+Perfil (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recupera o perfil de risco da carteira. 
+
+\begin{DoxyReturn}{Returns}
+Objeto da classe \doxylink{class_perfil}{Perfil} contendo o perfil armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_carteira_a1912b3a839c6ecbc335a57180b4b51bf}\index{Carteira@{Carteira}!setCodigo@{setCodigo}}
+\index{setCodigo@{setCodigo}!Carteira@{Carteira}}
+\doxysubsubsection{\texorpdfstring{setCodigo()}{setCodigo()}}
+{\footnotesize\ttfamily \label{class_carteira_a1912b3a839c6ecbc335a57180b4b51bf} 
+void Carteira\+::set\+Codigo (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_codigo}{Codigo}} \&}]{valor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define o código identificador da carteira. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Objeto da classe \doxylink{class_codigo}{Codigo} com o valor a ser associado \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_carteira_a27447261830ae29183f1bec1360b4ddb}\index{Carteira@{Carteira}!setNome@{setNome}}
+\index{setNome@{setNome}!Carteira@{Carteira}}
+\doxysubsubsection{\texorpdfstring{setNome()}{setNome()}}
+{\footnotesize\ttfamily \label{class_carteira_a27447261830ae29183f1bec1360b4ddb} 
+void Carteira\+::set\+Nome (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_nome}{Nome}} \&}]{valor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define o nome da carteira. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Objeto da classe \doxylink{class_nome}{Nome} com o valor a ser associado \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_carteira_a74bf54a70371799984743156ac667e24}\index{Carteira@{Carteira}!setPerfil@{setPerfil}}
+\index{setPerfil@{setPerfil}!Carteira@{Carteira}}
+\doxysubsubsection{\texorpdfstring{setPerfil()}{setPerfil()}}
+{\footnotesize\ttfamily \label{class_carteira_a74bf54a70371799984743156ac667e24} 
+void Carteira\+::set\+Perfil (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_perfil}{Perfil}} \&}]{valor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define o perfil de risco da carteira. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Objeto da classe \doxylink{class_perfil}{Perfil} com o valor a ser associado \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{entidades_8h}{entidades.\+h}}\end{DoxyCompactItemize}

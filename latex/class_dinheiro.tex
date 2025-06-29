@@ -1,0 +1,65 @@
+\doxysection{Dinheiro Class Reference}
+\hypertarget{class_dinheiro}{}\label{class_dinheiro}\index{Dinheiro@{Dinheiro}}
+
+
+Representa valores financeiros no sistema.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dinheiro_a8ad37a325f3479c2348e5812a2637d99}{set\+Valor}} (float)
+\begin{DoxyCompactList}\small\item\em Define o valor monetário. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_dinheiro_ae13a7a1a5802c6a5342bc8b96242d38f}{get\+Valor}} ()
+\begin{DoxyCompactList}\small\item\em Recupera o valor monetário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa valores financeiros no sistema. 
+
+Esta classe implementa um valor monetário, garantindo que esteja dentro de um intervalo plausível para operações financeiras no sistema. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dinheiro_ae13a7a1a5802c6a5342bc8b96242d38f}\index{Dinheiro@{Dinheiro}!getValor@{getValor}}
+\index{getValor@{getValor}!Dinheiro@{Dinheiro}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily \label{class_dinheiro_ae13a7a1a5802c6a5342bc8b96242d38f} 
+float Dinheiro\+::get\+Valor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recupera o valor monetário. 
+
+\begin{DoxyReturn}{Returns}
+Float contendo o valor armazenado 
+\end{DoxyReturn}
+\Hypertarget{class_dinheiro_a8ad37a325f3479c2348e5812a2637d99}\index{Dinheiro@{Dinheiro}!setValor@{setValor}}
+\index{setValor@{setValor}!Dinheiro@{Dinheiro}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily \label{class_dinheiro_a8ad37a325f3479c2348e5812a2637d99} 
+void Dinheiro\+::set\+Valor (\begin{DoxyParamCaption}\item[{float}]{valor}{}\end{DoxyParamCaption})}
+
+
+
+Define o valor monetário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valor} & Float contendo o valor a ser armazenado \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Caso o valor esteja fora do intervalo permitido \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+dominios.\+cpp\end{DoxyCompactItemize}
