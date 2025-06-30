@@ -234,7 +234,7 @@
 1747584291 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\entidades.h
 	"dominios.h"
 
-1751249499 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\main.cpp
+1751255229 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\main.cpp
 	<string>
 	<stdexcept>
 	<iostream>
@@ -251,7 +251,7 @@
 1747584291 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\testes.cpp
 	"testes.h"
 
-1751251387 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\stubs.cpp
+1751289628 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\stubs.cpp
 	"stubs.h"
 
 1751251356 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\stubs.h
@@ -260,14 +260,14 @@
 	"interfaces.h"
 	<string>
 
-1751251350 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\interfaces.h
+1751294516 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\interfaces.h
 	"dominios.h"
 	"entidades.h"
 
-1751248811 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.cpp
+1751294666 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.cpp
 	"controladorasApresentacao.h"
 
-1751249166 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.h
+1751294666 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.h
 	<conio.h>
 	<iostream>
 	<string.h>

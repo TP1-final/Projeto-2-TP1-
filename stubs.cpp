@@ -5,7 +5,7 @@
 
 const string StubServicoAutenticacao::INVALIDO = "23491340080";
 
-const string StubServicoContas::INVALIDO = "23491340080";
+const string StubServicoContas::INVALIDO = "39164265080";
 
 //--------------------------------------------------------------------------------------------
 // Implementações dos métodos de classes stub.
@@ -27,20 +27,26 @@ bool StubServicoContas::lerDados(Conta &conta){
     Cpf cpf;
     Senha senha;
     nome.setValor("Mateus");
-    cpf.setValor("23491340080");
+    cpf.setValor(conta.getCpf().getValor());
     senha.setValor("&Y6r09");
     Conta c;
     c.setNome(nome);
     c.setCpf(cpf);
     c.setSenha(senha);
+    if(conta.getCpf().getValor().compare(INVALIDO) == 0)
+        return false;
     conta = c;
     return true;
 }
 
-bool StubServicoContas::editarDados(Conta){
+bool StubServicoContas::editarDados(Conta conta){
+    if(conta.getCpf().getValor().compare(INVALIDO) == 0)
+        return false;
     return true;
 }
 
-bool StubServicoContas::excluirDados(Cpf){
+bool StubServicoContas::excluirDados(Cpf cpf){
+    if(cpf.getValor().compare(INVALIDO) == 0)
+        return false;
     return true;
 }

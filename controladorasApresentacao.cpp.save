@@ -26,7 +26,6 @@ void CntrApresentacaoControle::executar(){
     bool apresentar = true;                                                                     // Controle de laço.
 
     while(apresentar){
-
         // Apresenta tela inicial.
 
         CLR_SCR;                                                                                // Limpa janela.
@@ -43,6 +42,11 @@ void CntrApresentacaoControle::executar(){
             case 1: if(cntrApresentacaoAutenticacao->autenticar(&cpf)){                         // Solicita autenticação.
                         bool apresentar = true;                                                 // Controle de laço.
                         while(apresentar){
+                                //verifica se a conta foi excluida
+                                    if(cntrApresentacaoContas->isContaExcluida()){
+                                        cntrApresentacaoContas->resetContaExcluida();
+                                        break;
+                                    }
 
                             // Apresenta tela de seleção de serviço.
 
@@ -154,8 +158,13 @@ void CntrApresentacaoContas::executar(Cpf cpf){
         campo = getch() - 48;
 
         switch(campo){
-            case 1: {
+            case 1://lerDados(Conta&)
+                {
                 Conta conta;
+                conta.setCpf(cpf);
+
+                CLR_SCR;
+
                 if(cntrServicoContas->lerDados(conta)){
                     cout << "Nome: " << conta.getNome().getValor() << endl;
                     cout << "CPF: " << conta.getCpf().getValor() << endl;
@@ -163,12 +172,84 @@ void CntrApresentacaoContas::executar(Cpf cpf){
                     cout << "Pressione qualquer tecla para continuar...";
                     getch();
                 }
+                else{
+                    cout << "Erro ao ler dados da conta! Pressione qualquer tecla para continuar...";
+                    getch();
+                }
                 break;
             }
-            case 2: break;
-            case 3: break;
-            case 4: break;
-            case 5: apresentar = false;
+            case 2: //editarDados(Conta)
+                {
+                Nome nome;
+                Senha senha;
+                Conta conta;
+
+
+                char campo1[80], campo2[80];
+
+                CLR_SCR;
+
+                cout << "Insira os dados para atualizar a conta:" << endl;
+                cout << "Nome: ";
+                cin >> campo1;
+                cout << endl << "Senha: ";
+                cin >> campo2;
+
+                try{
+                    nome.setValor(string(campo1));
+                    senha.setValor(string(campo2));
+                }
+                catch(invalid_argument &e){
+                    cout << e.what() << endl;
+                    cout << "Erro! Pressione qualquer tecla para continuar...";
+                    getch();
+                    break;
+                }
+                conta.setCpf(cpf);
+                conta.setNome(nome);
+                conta.setSenha(senha);
+
+                if(cntrServicoContas->editarDados(conta)){
+
+                    CLR_SCR;
+
+                    cout << "Dados atualizados com sucesso!" << endl;
+                    cout << "Dados atualizados:" << endl;
+                    cout << "Cpf: " << conta.getCpf().getValor() << endl;
+                    cout << "Nome: " << conta.getNome().getValor() << endl;
+                    cout << "Senha: " << conta.getSenha().getValor() << endl;
+                    cout << "Pressione qualquer tecla para continuar...";
+                    getch();
+                }
+                else{
+                    cout << "Erro ao atualizar dados! Pressione qualquer tecla para continuar...";
+                    getch();
+                }
+                break;
+            }
+            case 3://excluirDados(Conta)
+                char campo;
+                cout << "Tem certeza que deseja excluir a conta CPF " << cpf.getValor() << "? y/n ";
+                cin >> campo;
+                if(campo == 'y'){
+                    if(cntrServicoContas->excluirDados(cpf))
+                    {
+                        cout << "Conta CPF " << cpf.getValor() << " excluida com sucesso!" << endl;
+                        this->contaExcluida = true;
+                        apresentar = false;
+                        cout << "Pressione qualquer tecla para continuar..." << endl;
+                        getch();
+                        break;
+                    }
+                    else{
+                        cout << "Erro ao excluir a conta! Pressione qualquer tecla para continuar...";
+                        getch();
+                        break;
+                    }
+                }
+                else
+                    break;
+            case 4: apresentar = false;
                 break;
 
         }
@@ -212,13 +293,15 @@ void CntrApresentacaoContas::criarConta(){
     cout << texto2 << " ";
     cin >> campo1;
     cout << "Valor lido:" << campo1 << endl;
+    fflush(stdin);
 
     cout << texto3 << " ";
-    cin >> campo2;
+    cin.getline(campo2, 80);
     cout << "Valor lido:" << campo2 << endl;
+    fflush(stdin);
 
     cout << texto4 << " ";
-    cin >> campo3;
+    cin.getline(campo3, 80);
     cout << "Valor lido:" << campo3 << endl;
 
     try{

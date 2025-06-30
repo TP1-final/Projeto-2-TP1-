@@ -57,10 +57,13 @@ inline void CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAut
 class CntrApresentacaoContas: public IApresentacaoContas {
     private:
         IServicoContas *cntrServicoContas;
+        bool contaExcluida = false;
     public:
         void criarConta();
         void executar(Cpf);
         void setCntrServicoContas(IServicoContas*);
+        bool isContaExcluida(){ return contaExcluida; }
+        void resetContaExcluida(){ contaExcluida = false; }
 };
 
 inline void CntrApresentacaoContas::setCntrServicoContas(IServicoContas *cntr){

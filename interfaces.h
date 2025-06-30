@@ -28,6 +28,8 @@ class IApresentacaoContas {
         virtual void criarConta() = 0;
         virtual void executar(Cpf) = 0;
         virtual void setCntrServicoContas(IServicoContas*) = 0;
+        virtual bool isContaExcluida() = 0;
+        virtual void resetContaExcluida() = 0;
         virtual ~IApresentacaoContas(){}
 
 };

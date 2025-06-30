@@ -27,7 +27,7 @@ int main()
    stubServicoAutenticacao = new StubServicoAutenticacao();
    stubServicoContas = new StubServicoContas();
 
-   //link entre controladoras e stubs
+   //link entre controladoras e stubs (futuramente controladoras de serviços)
    cntrApresentacaoControle->setCntrApresentacaoAutenticacao(cntrApresentacaoAutenticacao);
    cntrApresentacaoControle->setCntrApresentacaoContas(cntrApresentacaoContas);
 

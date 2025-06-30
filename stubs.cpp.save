@@ -22,22 +22,26 @@ bool StubServicoContas::criarConta(Conta conta){
     return true;
 }
 
-bool StubServicoContas::lerDados(Conta *conta){
+bool StubServicoContas::lerDados(Conta &conta){
     Nome nome;
     Cpf cpf;
     Senha senha;
     nome.setValor("Mateus");
-    cpf.setValor("23491340080");
+    cpf.setValor(conta.getCpf());
     senha.setValor("&Y6r09");
     Conta c;
     c.setNome(nome);
     c.setCpf(cpf);
     c.setSenha(senha);
+    if(conta.getCpf().getValor().compare(INVALIDO) == 0)
+        return false;
     conta = c;
     return true;
 }
 
-bool StubServicoContas::editarDados(Conta){
+bool StubServicoContas::editarDados(Conta conta){
+    if(conta.getCpf().getValor().compare(INVALIDO) == 0)
+        return false;
     return true;
 }
 
