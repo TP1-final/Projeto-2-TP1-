@@ -17,23 +17,23 @@ class CntrApresentacaoControle{
     private:
         Cpf cpf;
         IApresentacaoAutenticacao *cntrApresentacaoAutenticacao;
-        //IApresentacaoPessoal *cntrApresentacaoPessoal;
+        IApresentacaoContas *cntrApresentacaoContas;
         //IApresentacaoProdutosFinanceiros *cntrApresentacaoProdutosFinanceiros;
     public:
         void executar();
         void setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao*);
-        //void setCntrApresentacaoPessoal(IApresentacaoPessoal*);
+        void setCntrApresentacaoContas(IApresentacaoContas*);
         //void setCntrApresentacaoProdutosFinanceiros(IApresentacaoProdutosFinanceiros*);
 };
 
 inline void CntrApresentacaoControle::setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao *cntr){
     cntrApresentacaoAutenticacao = cntr;
 }
-/*
-inline void CntrApresentacaoControle::setCntrApresentacaoPessoal(IApresentacaoPessoal *cntr){
-            cntrApresentacaoPessoal = cntr;
-}
 
+inline void CntrApresentacaoControle::setCntrApresentacaoContas(IApresentacaoContas *cntr){
+            cntrApresentacaoContas = cntr;
+}
+/*
 inline void CntrApresentacaoControle::setCntrApresentacaoProdutosFinanceiros(IApresentacaoProdutosFinanceiros *cntr){
     cntrApresentacaoProdutosFinanceiros = cntr;
 }
@@ -63,8 +63,8 @@ class CntrApresentacaoContas: public IApresentacaoContas {
         void setCntrServicoContas(IServicoContas*);
 };
 
-inline void CntrApresentacaoContas::setCntrServicoContas(IServicoContas *cntrServicoContas){
-    this->cntrServicoContas = cntrServicoContas;
+inline void CntrApresentacaoContas::setCntrServicoContas(IServicoContas *cntr){
+    cntrServicoContas = cntr;
 }
 
 #endif // CONTROLADORASAPRESENTACAO_H_INCLUDED

@@ -3,7 +3,9 @@
 //--------------------------------------------------------------------------------------------
 // Valores usados como gatilhos de erros.
 
-const string StubServicoAutenticacao::INVALIDO = "12345";
+const string StubServicoAutenticacao::INVALIDO = "23491340080";
+
+const string StubServicoContas::INVALIDO = "23491340080";
 
 //--------------------------------------------------------------------------------------------
 // Implementações dos métodos de classes stub.
@@ -11,5 +13,34 @@ const string StubServicoAutenticacao::INVALIDO = "12345";
 bool StubServicoAutenticacao::autenticar(Cpf cpf, Senha senha){
     if(cpf.getValor().compare(INVALIDO) == 0)
         return false;
+    return true;
+}
+
+bool StubServicoContas::criarConta(Conta conta){
+    if(conta.getCpf().getValor().compare(INVALIDO) == 0)
+        return false;
+    return true;
+}
+
+bool StubServicoContas::lerDados(Conta *conta){
+    Nome nome;
+    Cpf cpf;
+    Senha senha;
+    nome.setValor("Mateus");
+    cpf.setValor("23491340080");
+    senha.setValor("&Y6r09");
+    Conta c;
+    c.setNome(nome);
+    c.setCpf(cpf);
+    c.setSenha(senha);
+    conta = c;
+    return true;
+}
+
+bool StubServicoContas::editarDados(Conta){
+    return true;
+}
+
+bool StubServicoContas::excluirDados(Cpf){
     return true;
 }

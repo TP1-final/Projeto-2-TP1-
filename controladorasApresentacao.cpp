@@ -8,14 +8,14 @@ void CntrApresentacaoControle::executar(){
 
     char texto1[]="Selecione um dos servicos : ";
     char texto2[]="1 - Acessar sistema.";
-    char texto3[]="2 - Cadastrar usuario.";
+    char texto3[]="2 - Cadastrar conta.";
     char texto4[]="3 - Acessar dados sobre produtos financeiros.";
     char texto5[]="4 - Encerrar execucao do sistema.";
 
     // Mensagens a serem apresentadas na tela de seleção de serviço.
 
     char texto6[]="Selecione um dos servicos : ";
-    char texto7[]="1 - Selecionar servicos de pessoal.";
+    char texto7[]="1 - Selecionar servicos de conta.";
     char texto8[]="2 - Selecionar servicos relacionados a produtos financeiros.";
     char texto9[]="3 - Encerrar sessao.";
 
@@ -56,7 +56,7 @@ void CntrApresentacaoControle::executar(){
                             campo = getch() - 48;                                               // Leitura do campo de entrada e conversão de ASCII.
 
                             switch(campo){
-                                case 1:// cntrApresentacaoPessoal->executar(cpf);                 // Solicita serviço de pessoal.
+                                case 1: cntrApresentacaoContas->executar(cpf);                 // Solicita serviço de pessoal.
                                         break;
                                 case 2:// cntrApresentacaoProdutosFinanceiros->executar(cpf);     // Solicita serviço de produto financeiro.
                                         break;
@@ -71,7 +71,7 @@ void CntrApresentacaoControle::executar(){
                         getch();                                                                // Leitura de caracter digitado.
                     }
                     break;
-            case 2: //cntrApresentacaoPessoal->cadastrar();
+            case 2: cntrApresentacaoContas->criarConta();
                     break;
             case 3: //cntrApresentacaoProdutosFinanceiros->executar();
                     break;
@@ -131,11 +131,10 @@ void CntrApresentacaoContas::executar(Cpf cpf){
     //mensagens a serem apresentadas
 
     char texto1[]="Selecione um dos servicos de conta: ";
-    char texto2[]="1 - Criar conta.";
-    char texto3[]="2 - Ver dados.";
-    char texto4[]="3 - Editar dados.";
-    char texto5[]="4 - Excluir conta.";
-    char texto6[]="5 - Retornar.";
+    char texto2[]="1 - Ver dados da conta.";
+    char texto3[]="2 - Editar dados da conta.";
+    char texto4[]="3 - Excluir conta.";
+    char texto5[]="4 - Retornar.";
 
     int campo;
 
@@ -151,17 +150,24 @@ void CntrApresentacaoContas::executar(Cpf cpf){
         cout << texto3 << endl;
         cout << texto4 << endl;
         cout << texto5 << endl;
-        cout << texto6 << endl;
 
-        campo = getch() - 4;
+        campo = getch() - 48;
 
         switch(campo){
-            case 1: cntrServicoContas->criarConta();
+            case 1: {
+                Conta conta;
+                if(cntrServicoContas->lerDados(conta)){
+                    cout << "Nome: " << conta.getNome().getValor() << endl;
+                    cout << "CPF: " << conta.getCpf().getValor() << endl;
+                    cout << "Senha: " << conta.getSenha().getValor() << endl;
+                    cout << "Pressione qualquer tecla para continuar...";
+                    getch();
+                }
                 break;
-            case 2:
-            case 3:
-            case 4:
-            case 5: apresentar = false;
+            }
+            case 2: break;
+            case 3: break;
+            case 4: apresentar = false;
                 break;
 
         }
@@ -176,13 +182,15 @@ void CntrApresentacaoContas::criarConta(){
 
     // Mensagens a serem apresentadas na tela de cadastramento.
 
+    cout << "Chegou aqui";
+
     char texto1[] ="Preencha os seguintes campos: ";
-    char texto2[] ="CPF             :";
-    char texto2[] ="Nome            :";
-    char texto3[] ="Senha           :";
-    char texto4[]="Dados em formato incorreto. Digite algo.";
-    char texto5[]="Sucesso no cadastramento. Digite algo.";
-    char texto6[]="Falha no cadastramento. Digite algo.";
+    char texto2[] ="CPF:";
+    char texto3[] ="Nome:";
+    char texto4[] ="Senha:";
+    char texto5[]="Dados em formato incorreto. Digite algo.";
+    char texto6[]="Sucesso no cadastramento. Digite algo.";
+    char texto7[]="Falha no cadastramento. Digite algo.";
 
     //campos para receber os dados
 
@@ -190,6 +198,58 @@ void CntrApresentacaoContas::criarConta(){
 
     //criar instâncias de domínios
 
+    Cpf cpf;
+    Nome nome;
+    Senha senha;
 
+    //apresentar tela de cadastro
+
+    CLR_SCR;
+
+    cout << texto1 << endl;
+
+    cout << texto2 << " ";
+    cin >> campo1;
+    cout << "Valor lido:" << campo1 << endl;
+
+    cout << texto3 << " ";
+    cin >> campo2;
+    cout << "Valor lido:" << campo2 << endl;
+
+    cout << texto4 << " ";
+    cin >> campo3;
+    cout << "Valor lido:" << campo3 << endl;
+
+    try{
+        cpf.setValor(string(campo1));
+        nome.setValor(string(campo2));
+        senha.setValor(string(campo3));
+    }
+    catch(invalid_argument &e){
+        cout << e.what() << endl;
+        cout << texto5 << endl;
+        getch();
+        return;
+    }
+
+    //instanciar e inicializar entidade
+
+    Conta conta;
+
+    conta.setCpf(cpf);
+    conta.setNome(nome);
+    conta.setSenha(senha);
+
+    //cadastra conta
+
+    if(cntrServicoContas->criarConta(conta)){
+        cout << texto6 << endl;
+        getch();
+        return;
+    }
+
+    cout << texto7 << endl;
+    getch();
+    return;
 }
 

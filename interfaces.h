@@ -25,7 +25,7 @@ class IApresentacaoAutenticacao {
 
 class IApresentacaoContas {
     public:
-        virtual void criar() = 0;
+        virtual void criarConta() = 0;
         virtual void executar(Cpf) = 0;
         virtual void setCntrServicoContas(IServicoContas*) = 0;
         virtual ~IApresentacaoContas(){}
@@ -43,7 +43,7 @@ class IServicoAutenticacao {
 class IServicoContas {
     public:
         virtual bool criarConta(Conta) = 0;
-        virtual bool lerDados(Conta*) = 0;
+        virtual bool lerDados(Conta&) = 0;
         virtual bool editarDados(Conta) = 0;
         virtual bool excluirDados(Cpf) = 0;
         virtual ~IServicoContas(){}
