@@ -34,6 +34,15 @@ class IApresentacaoContas {
 
 };
 
+class IApresentacaoInvestimentos {
+    public:
+        virtual void executar(const Cpf&) = 0;
+        virtual void setCntrServicoInvestimentos(IServicoInvestimentos*) = 0;
+        virtual ~IApresentacaoInvestimentos(){}
+
+
+};
+
 // Declarações das interfaces da camada de serviço.
 
 class IServicoAutenticacao {
@@ -51,4 +60,10 @@ class IServicoContas {
         virtual ~IServicoContas(){}
 };
 
+class IServicoInvestimentos{
+    public:
+        virtual bool executar(Carteira&, int) = 0;
+        virtual bool executar(Ordem&, int) = 0;
+       // virtual void setContainerCarteira(ContainerCarteira*) = 0;
+};
 #endif // INTERFACES_H_INCLUDED

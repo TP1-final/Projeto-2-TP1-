@@ -32,8 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="comandos.cpp" />
+		<Unit filename="comandos.h" />
+		<Unit filename="containers.h" />
 		<Unit filename="controladorasApresentacao.cpp" />
 		<Unit filename="controladorasApresentacao.h" />
+		<Unit filename="controladorasServico.cpp" />
 		<Unit filename="controladorasServico.h" />
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.h" />

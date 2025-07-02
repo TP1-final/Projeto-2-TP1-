@@ -18,12 +18,13 @@ class CntrApresentacaoControle{
         Cpf cpf;
         IApresentacaoAutenticacao *cntrApresentacaoAutenticacao;
         IApresentacaoContas *cntrApresentacaoContas;
-        //IApresentacaoProdutosFinanceiros *cntrApresentacaoProdutosFinanceiros;
+        IApresentacaoInvestimentos *cntrApresentacaoInvestimentos;
+
     public:
         void executar();
         void setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao*);
         void setCntrApresentacaoContas(IApresentacaoContas*);
-        //void setCntrApresentacaoProdutosFinanceiros(IApresentacaoProdutosFinanceiros*);
+        void setCntrApresentacaoInvestimentos(IApresentacaoInvestimentos*);
 };
 
 inline void CntrApresentacaoControle::setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao *cntr){
@@ -33,11 +34,11 @@ inline void CntrApresentacaoControle::setCntrApresentacaoAutenticacao(IApresenta
 inline void CntrApresentacaoControle::setCntrApresentacaoContas(IApresentacaoContas *cntr){
             cntrApresentacaoContas = cntr;
 }
-/*
-inline void CntrApresentacaoControle::setCntrApresentacaoProdutosFinanceiros(IApresentacaoProdutosFinanceiros *cntr){
-    cntrApresentacaoProdutosFinanceiros = cntr;
+
+inline void CntrApresentacaoControle::setCntrApresentacaoInvestimentos(IApresentacaoInvestimentos *cntr){
+    cntrApresentacaoInvestimentos = cntr;
 }
-*/
+
 //--------------------------------------------------------------------------------------------
 
 class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao {
@@ -52,7 +53,7 @@ inline void CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAut
     this->cntr = cntr;
 }
 
-//-----------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------
 
 class CntrApresentacaoContas: public IApresentacaoContas {
     private:
@@ -69,5 +70,30 @@ class CntrApresentacaoContas: public IApresentacaoContas {
 inline void CntrApresentacaoContas::setCntrServicoContas(IServicoContas *cntr){
     cntrServicoContas = cntr;
 }
+
+//------------------------------------------------------------------------------------------------------------------
+
+ class CntrApresentacaoInvestimentos: public IApresentacaoInvestimentos{
+    private:
+        //códigos dos serviços
+        const static int CRIAR_CARTEIRA = 1;
+        const static int LER_CARTEIRA = 2;
+        const static int EDITAR_CARTEIRA = 3;
+        const static int EXCLUIR_CARTEIRA = 4;
+        const static int LISTAR_CARTEIRAS = 5;
+        const static int CRIAR_ORDEM = 6;
+        const static int LER_ORDEM = 7;
+        const static int EXCLUIR_ORDEM = 8;
+        const static int LISTAR_ORDENS = 9;
+
+        IServicoInvestimentos *cntrServicoInvestimentos; //referência para servidor
+    public:
+        void executar(const Cpf&);
+        void setCntrServicoInvestimentos(IServicoInvestimentos*);
+ };
+
+ inline void CntrApresentacaoInvestimentos::setCntrServicoInvestimentos(IServicoInvestimentos *cntr){
+    cntrServicoInvestimentos = cntr;
+ }
 
 #endif // CONTROLADORASAPRESENTACAO_H_INCLUDED

@@ -1,9 +1,16 @@
 #ifndef CONTROLADORASSERVICO_H_INCLUDED
 #define CONTROLADORASSERVICO_H_INCLUDED
 
+#include <conio.h>
+#include <iostream>
+#include <string.h>
+
 #include "dominios.h"
 #include "entidades.h"
 #include "interfaces.h"
+#include "containers.h"
+
+#define CLR_SCR system("cls");
 
 //--------------------------------------------------------------------------------------------
 // Declarações de classes controladoras de serviço.
@@ -20,5 +27,33 @@ class CntrServicoContas: public IServicoContas {
         bool editarDados(Conta) = 0;
         bool excluirDados(Cpf) = 0;
 };
+
+//---------------------------------------------------------------------------------------------------
+
+class CntrServicoInvestimentos: public IServicoInvestimentos{
+    private:
+        //códigos dos serviços
+        const static int CRIAR_CARTEIRA = 1;
+        const static int LER_CARTEIRA = 2;
+        const static int EDITAR_CARTEIRA = 3;
+        const static int EXCLUIR_CARTEIRA = 4;
+        const static int LISTAR_CARTEIRAS = 5;
+        const static int CRIAR_ORDEM = 6;
+        const static int LER_ORDEM = 7;
+        const static int EXCLUIR_ORDEM = 8;
+        const static int LISTAR_ORDENS = 9;
+
+       ContainerCarteira *containerCarteira; //referência para servidor
+    public:
+        bool executar(Carteira&, int);
+        //bool executar(Ordem&, int);
+      //  void setContainerCarteira(ContainerCarteira*);
+ };
+/*
+ inline void CntrServicoInvestimentos::setContainerCarteira(ContainerCarteira *container){
+        containerCarteira = container;
+ }
+*/
+
 
 #endif // CONTROLADORASSERVICO_H_INCLUDED

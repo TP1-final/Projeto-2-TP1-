@@ -1,4 +1,5 @@
 #include "controladorasApresentacao.h"
+#include "comandos.h"
 
 //Implementações dos métodos das classes controladoras
 
@@ -16,7 +17,7 @@ void CntrApresentacaoControle::executar(){
 
     char texto6[]="Selecione um dos servicos : ";
     char texto7[]="1 - Selecionar servicos de conta.";
-    char texto8[]="2 - Selecionar servicos relacionados a produtos financeiros.";
+    char texto8[]="2 - Selecionar servicos de investimentos.";
     char texto9[]="3 - Encerrar sessao.";
 
     char texto10[]="Falha na autenticacao. Digite algo para continuar.";                        // Mensagem a ser apresentada.
@@ -28,8 +29,8 @@ void CntrApresentacaoControle::executar(){
     while(apresentar){
         // Apresenta tela inicial.
 
-        CLR_SCR;                                                                                // Limpa janela.
-
+        CLR_SCR;
+                                                                                        // Limpa janela.
         cout << texto1 << endl;                                                                 // Imprime nome do campo.
         cout << texto2 << endl;                                                                 // Imprime nome do campo.
         cout << texto3 << endl;                                                                 // Imprime nome do campo.
@@ -62,7 +63,7 @@ void CntrApresentacaoControle::executar(){
                             switch(campo){
                                 case 1: cntrApresentacaoContas->executar(cpf);                 // Solicita serviço de pessoal.
                                         break;
-                                case 2:// cntrApresentacaoProdutosFinanceiros->executar(cpf);     // Solicita serviço de produto financeiro.
+                                case 2: cntrApresentacaoInvestimentos->executar(cpf);     // Solicita serviço de produto financeiro.
                                         break;
                                 case 3: apresentar = false;
                                         break;
@@ -264,8 +265,6 @@ void CntrApresentacaoContas::criarConta(){
 
     // Mensagens a serem apresentadas na tela de cadastramento.
 
-    cout << "Chegou aqui";
-
     char texto1[] ="Preencha os seguintes campos: ";
     char texto2[] ="CPF:";
     char texto3[] ="Nome:";
@@ -335,5 +334,47 @@ void CntrApresentacaoContas::criarConta(){
     cout << texto7 << endl;
     getch();
     return;
+}
+
+//------------------------------------------------------------------------------------
+
+void CntrApresentacaoInvestimentos::executar(const Cpf& cpf){
+    ComandoIApresentacaoInvestimentos *comando;
+
+    int opcao;
+
+    bool apresentar = true;
+
+    while(apresentar){
+        //apresentar opções
+
+        CLR_SCR;
+
+        cout << "SERVICOS DE CARTEIRA" << endl << endl;
+        cout << "Criar carteira - " << CRIAR_CARTEIRA << endl;
+        cout << "Ler dados da carteira - " << LER_CARTEIRA << endl;
+        cout << "Editar dados da carteira - " << EDITAR_CARTEIRA << endl;
+        cout << "Excluir carteira - " << EXCLUIR_CARTEIRA << endl;
+        cout << "Listar carteiras associadas a conta - " << LISTAR_CARTEIRAS << endl;
+        cout << endl << "SERVIÇOS DE ORDEM" << endl << endl;
+        cout << "Criar ordem - " << CRIAR_ORDEM << endl;
+        cout << "Ler dados da ordem - " << LER_ORDEM << endl;
+        cout << "Excluir ordem - " << EXCLUIR_ORDEM << endl;
+        cout << "Listar ordens associadas a carteira - " << LISTAR_ORDENS << endl;
+        cout << "Voltar - 0" << endl;
+        cout << "Selecione uma opcao: ";
+        opcao = getch() - 48;
+
+        switch(opcao){
+            case CRIAR_CARTEIRA: comando = new ComandoIApresentacaoInvestimentosCriarCarteira();
+                comando->executar(cntrServicoInvestimentos, cpf);
+                delete comando;
+                break;
+            //case LER_CARTEIRA: comando = new ComandoIApresentacaoInvestimentosLerCarteira();
+            case 0: apresentar = false;
+
+        }
+
+    }
 }
 
