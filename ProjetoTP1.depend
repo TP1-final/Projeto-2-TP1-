@@ -219,24 +219,33 @@
 1747584291 source:c:\users\etec0\onedrive\documentos\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\t1-tp1-211060577-190018011-241022399-241004597-160023629-241004505\projeto_tp1\testes.cpp
 	"testes.h"
 
-1750944408 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\dominios.cpp
+1751461846 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\dominios.cpp
 	"dominios.h"
 
-1747584291 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\dominios.h
+1751461846 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\dominios.h
 	<stdexcept>
 	<regex>
 	<string>
 	<unordered_set>
 
-1747584291 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\entidades.cpp
+1751461846 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\entidades.cpp
 	"entidades.h"
 
 1751414305 D
 
-1751461451 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\entidades.h
+1751461846 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\entidades.h
 	"dominios.h"
 
-1751386963 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\main.cpp
+1751461846 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\main.cpp
+	<string>
+	<stdexcept>
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	"controladorasApresentacao.h"
+	"controladorasServico.h"
+	"stubs.h"
 
 1751382216 9bdf (ModuloApresentacaoInvestimentos)
 	<string>
@@ -257,36 +266,42 @@
 	"entidades.h"
 	"interfaces.h"
 
-1747584291 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\testes.h
+1751461846 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\testes.h
 	"dominios.h"
 	"entidades.h"
 
-1747584291 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\testes.cpp
+1751461846 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\testes.cpp
 	"testes.h"
 
-1751289628 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\stubs.cpp
+1751461846 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\stubs.cpp
 	"stubs.h"
 
-1751251356 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\stubs.h
+1751461846 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\stubs.h
 	"dominios.h"
 	"entidades.h"
 	"interfaces.h"
 	<string>
 
-1751392860 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\interfaces.h
+1751473821 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\interfaces.h
 	"dominios.h"
 	"entidades.h"
-	"dominios.h"
-	"entidades.h"
 
-1751414305 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.cpp
-
-1751382216 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.h
-
-1751414276 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\comandos.cpp
+1751481389 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.cpp
+	"controladorasApresentacao.h"
 	"comandos.h"
 
-1751414276 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\comandos.h
+1751461846 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.h
+	<conio.h>
+	<iostream>
+	<string.h>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+
+1751488571 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\comandos.cpp
+	"comandos.h"
+
+1751479092 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\comandos.h
 	"dominios.h"
 	"entidades.h"
 	"interfaces.h"
@@ -296,16 +311,16 @@
 	<cstdlib>
 	<conio.h>
 
-1751419756 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\containers.h
+1751461846 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\containers.h
 	"dominios.h"
 	"entidades.h"
 	<map>
 
-1751393563 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasservico.cpp
+1751474232 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasservico.cpp
 	"controladorasServico.h"
 	"comandos.h"
 
-1751386529 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasservico.h
+1751473852 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasservico.h
 	<conio.h>
 	<iostream>
 	<string.h>
@@ -313,4 +328,93 @@
 	"entidades.h"
 	"interfaces.h"
 	"containers.h"
+
+1751479743 source:c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\comandos.cpp
+	"comandos.h"
+
+1751479092 c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\comandos.h
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	"containers.h"
+	<stdexcept>
+	<iostream>
+	<cstdlib>
+	<conio.h>
+
+1751461846 c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\dominios.h
+	<stdexcept>
+	<regex>
+	<string>
+	<unordered_set>
+
+1751461846 c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\entidades.h
+	"dominios.h"
+
+1751473821 c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\interfaces.h
+	"dominios.h"
+	"entidades.h"
+
+1751461846 c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\containers.h
+	"dominios.h"
+	"entidades.h"
+	<map>
+
+1751479568 source:c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\controladorasapresentacao.cpp
+	"controladorasApresentacao.h"
+	"comandos.h"
+
+1751461846 c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\controladorasapresentacao.h
+	<conio.h>
+	<iostream>
+	<string.h>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+
+1751474232 source:c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\controladorasservico.cpp
+	"controladorasServico.h"
+	"comandos.h"
+
+1751473852 c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\controladorasservico.h
+	<conio.h>
+	<iostream>
+	<string.h>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	"containers.h"
+
+1751461846 source:c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\dominios.cpp
+	"dominios.h"
+
+1751461846 source:c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\entidades.cpp
+	"entidades.h"
+
+1751461846 source:c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\main.cpp
+	<string>
+	<stdexcept>
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	"controladorasApresentacao.h"
+	"controladorasServico.h"
+	"stubs.h"
+
+1751461846 c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\stubs.h
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	<string>
+
+1751461846 source:c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\stubs.cpp
+	"stubs.h"
+
+1751461846 source:c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\testes.cpp
+	"testes.h"
+
+1751461846 c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentoscerto\testes.h
+	"dominios.h"
+	"entidades.h"
 

@@ -63,7 +63,6 @@ class IServicoContas {
 class IServicoInvestimentos{
     public:
         virtual bool executar(Carteira&, int) = 0;
-        // virtual bool executar(Ordem&, int) = 0;
-       // virtual void setContainerCarteira(ContainerCarteira*) = 0;
+        virtual bool executar(Ordem&, int) = 0;
 };
 #endif // INTERFACES_H_INCLUDED

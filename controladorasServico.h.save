@@ -46,7 +46,7 @@ class CntrServicoInvestimentos: public IServicoInvestimentos{
        ContainerCarteira *containerCarteira; //referência para servidor
     public:
         bool executar(Carteira&, int);
-        //bool executar(Ordem&, int);
+        bool executar(Ordem&, int);
       //  void setContainerCarteira(ContainerCarteira*);
  };
 /*

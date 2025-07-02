@@ -10,15 +10,15 @@ void CntrApresentacaoControle::executar(){
     char texto1[]="Selecione um dos servicos : ";
     char texto2[]="1 - Acessar sistema.";
     char texto3[]="2 - Cadastrar conta.";
-    char texto4[]="3 - Acessar dados sobre produtos financeiros.";
-    char texto5[]="4 - Encerrar execucao do sistema.";
+    //char texto4[]="3 - Acessar dados sobre produtos financeiros.";
+    char texto5[]="0 - Encerrar execucao do sistema.";
 
     // Mensagens a serem apresentadas na tela de seleção de serviço.
 
     char texto6[]="Selecione um dos servicos : ";
     char texto7[]="1 - Selecionar servicos de conta.";
     char texto8[]="2 - Selecionar servicos de investimentos.";
-    char texto9[]="3 - Encerrar sessao.";
+    char texto9[]="0 - Encerrar sessao.";
 
     char texto10[]="Falha na autenticacao. Digite algo para continuar.";                        // Mensagem a ser apresentada.
 
@@ -34,7 +34,7 @@ void CntrApresentacaoControle::executar(){
         cout << texto1 << endl;                                                                 // Imprime nome do campo.
         cout << texto2 << endl;                                                                 // Imprime nome do campo.
         cout << texto3 << endl;                                                                 // Imprime nome do campo.
-        cout << texto4 << endl;                                                                 // Imprime nome do campo.
+        //cout << texto4 << endl;                                                                 // Imprime nome do campo.
         cout << texto5 << endl;                                                                 // Imprime nome do campo.
 
         campo = getch() - 48;                                                                   // Leitura do campo de entrada e conversão de ASCII.
@@ -65,7 +65,7 @@ void CntrApresentacaoControle::executar(){
                                         break;
                                 case 2: cntrApresentacaoInvestimentos->executar(cpf);     // Solicita serviço de produto financeiro.
                                         break;
-                                case 3: apresentar = false;
+                                case 0: apresentar = false;
                                         break;
                             }
                         }
@@ -78,9 +78,7 @@ void CntrApresentacaoControle::executar(){
                     break;
             case 2: cntrApresentacaoContas->criarConta();
                     break;
-            case 3: //cntrApresentacaoProdutosFinanceiros->executar();
-                    break;
-            case 4: apresentar = false;
+            case 0: apresentar = false;
                     break;
         }
     }
@@ -124,7 +122,8 @@ bool CntrApresentacaoAutenticacao::autenticar(Cpf *cpf){
             CLR_SCR;
             cout << exp.what() << endl;                                                                           // Limpa janela.
             cout << texto3 << endl;                                                             // Informa formato incorreto.
-            getch();                                                                            // Lê caracter digitado.
+            getch();
+            return false;                                                                            // Lê caracter digitado.
         }
     }
     return (cntr->autenticar(*cpf, senha));                                                     // Solicita serviço de autenticação.
@@ -192,9 +191,11 @@ void CntrApresentacaoContas::executar(Cpf cpf){
 
                 cout << "Insira os dados para atualizar a conta:" << endl;
                 cout << "Nome: ";
-                cin >> campo1;
+                fflush(stdin);
+                cin.getline(campo1, sizeof(campo1));
+                fflush(stdin);
                 cout << endl << "Senha: ";
-                cin >> campo2;
+                cin.getline(campo2, sizeof(campo2));
 
                 try{
                     nome.setValor(string(campo1));
@@ -339,7 +340,7 @@ void CntrApresentacaoContas::criarConta(){
 //------------------------------------------------------------------------------------
 
 void CntrApresentacaoInvestimentos::executar(const Cpf& cpf){
-    ComandoIApresentacaoInvestimentos *comando;
+    ComandoApresentacaoInvestimentos *comando;
 
     int opcao;
 
@@ -366,11 +367,24 @@ void CntrApresentacaoInvestimentos::executar(const Cpf& cpf){
         opcao = getch() - 48;
 
         switch(opcao){
-            case CRIAR_CARTEIRA: comando = new ComandoIApresentacaoInvestimentosCriarCarteira();
+            case CRIAR_CARTEIRA: comando = new ComandoApresentacaoInvestimentosCriarCarteira();
                 comando->executar(cntrServicoInvestimentos, cpf);
                 delete comando;
                 break;
-            //case LER_CARTEIRA: comando = new ComandoIApresentacaoInvestimentosLerCarteira();
+            case LER_CARTEIRA: comando = new ComandoApresentacaoInvestimentosLerCarteira();
+                comando->executar(cntrServicoInvestimentos, cpf);
+                delete comando;
+                break;
+            case EDITAR_CARTEIRA: comando = new ComandoApresentacaoInvestimentosEditarCarteira();
+                comando->executar(cntrServicoInvestimentos, cpf);
+                delete comando;
+                break;
+
+            case EXCLUIR_CARTEIRA: comando = new ComandoApresentacaoInvestimentosExcluirCarteira();
+                comando->executar(cntrServicoInvestimentos, cpf);
+                delete comando;
+                break;
+
             case 0: apresentar = false;
 
         }

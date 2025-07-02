@@ -43,17 +43,11 @@ class CntrServicoInvestimentos: public IServicoInvestimentos{
         const static int EXCLUIR_ORDEM = 8;
         const static int LISTAR_ORDENS = 9;
 
-       ContainerCarteira *containerCarteira; //referência para servidor
     public:
         bool executar(Carteira&, int);
-        //bool executar(Ordem&, int);
-      //  void setContainerCarteira(ContainerCarteira*);
+        bool executar(Ordem&, int);
+
  };
-/*
- inline void CntrServicoInvestimentos::setContainerCarteira(ContainerCarteira *container){
-        containerCarteira = container;
- }
-*/
 
 
 #endif // CONTROLADORASSERVICO_H_INCLUDED

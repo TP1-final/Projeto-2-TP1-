@@ -16,150 +16,165 @@
 //declarações dos comandos
 //CAMADA DE APRESENTAÇÃO
 
-class ComandoIApresentacaoInvestimentos{
+class ComandoApresentacaoInvestimentos{
     public:
+        const static int CRIAR_CARTEIRA = 1;
+        const static int LER_CARTEIRA = 2;
+        const static int EDITAR_CARTEIRA = 3;
+        const static int EXCLUIR_CARTEIRA = 4;
+        const static int LISTAR_CARTEIRAS = 5;
+        const static int CRIAR_ORDEM = 6;
+        const static int LER_ORDEM = 7;
+        const static int EXCLUIR_ORDEM = 8;
+        const static int LISTAR_ORDENS = 9;
         virtual void executar(IServicoInvestimentos*, Cpf) = 0;
-        virtual ~ComandoIApresentacaoInvestimentos(){}
+        virtual ~ComandoApresentacaoInvestimentos(){}
 };
 
 //----------------------------------------------------------------------------------
 
-class ComandoIApresentacaoInvestimentosCriarCarteira: public ComandoIApresentacaoInvestimentos{
+class ComandoApresentacaoInvestimentosCriarCarteira: public ComandoApresentacaoInvestimentos{
     public:
         void executar(IServicoInvestimentos* cntrServicoInvestimentos, Cpf cpf);
 };
 
 //----------------------------------------------------------------------------------
 
-class ComandoIApresentacaoInvestimentosLerCarteira: public ComandoIApresentacaoInvestimentos{
+class ComandoApresentacaoInvestimentosLerCarteira: public ComandoApresentacaoInvestimentos{
+    public:
+        void executar(IServicoInvestimentos*, Cpf);
+};
+
+//----------------------------------------------------------------------------------
+
+class ComandoApresentacaoInvestimentosEditarCarteira: public ComandoApresentacaoInvestimentos{
     public:
         void executar(IServicoInvestimentos*);
 };
 
 //----------------------------------------------------------------------------------
 
-class ComandoIApresentacaoInvestimentosEditarCarteira: public ComandoIApresentacaoInvestimentos{
+class ComandoApresentacaoInvestimentosExcluirCarteira: public ComandoApresentacaoInvestimentos{
     public:
         void executar(IServicoInvestimentos*);
 };
 
 //----------------------------------------------------------------------------------
 
-class ComandoIApresentacaoInvestimentosExcluirCarteira: public ComandoIApresentacaoInvestimentos{
+class ComandoApresentacaoInvestimentosListarCarteiras: public ComandoApresentacaoInvestimentos{
     public:
         void executar(IServicoInvestimentos*);
 };
 
 //----------------------------------------------------------------------------------
 
-class ComandoIApresentacaoInvestimentosListarCarteiras: public ComandoIApresentacaoInvestimentos{
+class ComandoApresentacaoInvestimentosCriarOrdem: public ComandoApresentacaoInvestimentos{
     public:
         void executar(IServicoInvestimentos*);
 };
 
 //----------------------------------------------------------------------------------
 
-class ComandoIApresentacaoInvestimentosCriarOrdem: public ComandoIApresentacaoInvestimentos{
+class ComandoApresentacaoInvestimentosLerOrdem: public ComandoApresentacaoInvestimentos{
     public:
         void executar(IServicoInvestimentos*);
 };
 
 //----------------------------------------------------------------------------------
 
-class ComandoIApresentacaoInvestimentosLerOrdem: public ComandoIApresentacaoInvestimentos{
+class ComandoApresentacaoInvestimentosExcluirOrdem: public ComandoApresentacaoInvestimentos{
     public:
         void executar(IServicoInvestimentos*);
 };
 
 //----------------------------------------------------------------------------------
 
-class ComandoIApresentacaoInvestimentosExcluirOrdem: public ComandoIApresentacaoInvestimentos{
-    public:
-        void executar(IServicoInvestimentos*);
-};
-
-//----------------------------------------------------------------------------------
-
-class ComandoIApresentacaoInvestimentosListarOrdens: public ComandoIApresentacaoInvestimentos{
+class ComandoApresentacaoInvestimentosListarOrdens: public ComandoApresentacaoInvestimentos{
     public:
         void executar(IServicoInvestimentos*);
 };
 
 //CAMADA DE SERVIÇO
 
-class ComandoIServicoInvestimentos{
+class ComandoServicoInvestimentosCarteira{
     public:
         virtual bool executar(Carteira&) = 0;
+        virtual ~ComandoServicoInvestimentosCarteira(){}
+};
+
+//----------------------------------------------------------------------------------
+
+class ComandoServicoInvestimentosCarteiraCriar: public ComandoServicoInvestimentosCarteira{
+    public:
+        bool executar(Carteira&);
+};
+
+//----------------------------------------------------------------------------------
+
+class ComandoServicoInvestimentosCarteiraLer: public ComandoServicoInvestimentosCarteira{
+    public:
+        bool executar(Carteira&);
+};
+
+
+//----------------------------------------------------------------------------------
+
+class ComandoServicoInvestimentosCarteiraEditar: public ComandoServicoInvestimentosCarteira{
+    public:
+        bool executar(Carteira&);
+};
+
+//----------------------------------------------------------------------------------
+
+class ComandoServicoInvestimentosCarteiraExcluir: public ComandoServicoInvestimentosCarteira{
+    public:
+        bool executar(Carteira&);
+};
+
+//----------------------------------------------------------------------------------
+
+class ComandoServicoInvestimentosCarteiraListar: public ComandoServicoInvestimentosCarteira{
+    public:
+        void executar(Carteira&);
+        
+};
+
+//-----------------------------------------------------------------------------------
+
+class ComandoServicoInvestimentosOrdem{
+    public:
         virtual bool executar(Ordem&) = 0;
-        virtual ~ComandoIServicoInvestimentos(){}
+        virtual ~ComandoServicoInvestimentosOrdem(){}
 };
 
 //----------------------------------------------------------------------------------
 
-class ComandoIServicoInvestimentosCriarCarteira: public ComandoIServicoInvestimentos{
+class ComandoServicoInvestimentosOrdemCriar: public ComandoServicoInvestimentosOrdem{
     public:
-        bool executar(Carteira&);
-        bool executar(Ordem&){}
+        bool executar(Ordem&);
 };
 
 //----------------------------------------------------------------------------------
 
-class ComandoIServicoInvestimentosLerCarteira: public ComandoIServicoInvestimentos{
+class ComandoServicoInvestimentosOrdemLer: public ComandoServicoInvestimentosOrdem{
     public:
-        bool executar(Carteira&);
-        bool executar(Ordem&){}
-};
-
-/*
-//----------------------------------------------------------------------------------
-
-class ComandoIApresentacaoInvestimentosEditarCarteira: public ComandoIApresentacaoInvestimentos{
-    public:
-        void executar(IServicoInvestimentos*);
+        bool executar(Ordem&);
 };
 
 //----------------------------------------------------------------------------------
 
-class ComandoIApresentacaoInvestimentosExcluirCarteira: public ComandoIApresentacaoInvestimentos{
+class ComandoServicoInvestimentosOrdemExcluir: public ComandoServicoInvestimentosOrdem{
     public:
-        void executar(IServicoInvestimentos*);
+        bool executar(Ordem&);
 };
 
 //----------------------------------------------------------------------------------
 
-class ComandoIApresentacaoInvestimentosListarCarteiras: public ComandoIApresentacaoInvestimentos{
+class ComandoServicoInvestimentosOrdemListar: public ComandoServicoInvestimentosOrdem{
     public:
-        void executar(IServicoInvestimentos*);
+        bool executar(Ordem&);
 };
 
-//----------------------------------------------------------------------------------
 
-class ComandoIApresentacaoInvestimentosCriarOrdem: public ComandoIApresentacaoInvestimentos{
-    public:
-        void executar(IServicoInvestimentos*);
-};
-
-//----------------------------------------------------------------------------------
-
-class ComandoIApresentacaoInvestimentosLerOrdem: public ComandoIApresentacaoInvestimentos{
-    public:
-        void executar(IServicoInvestimentos*);
-};
-
-//----------------------------------------------------------------------------------
-
-class ComandoIApresentacaoInvestimentosExcluirOrdem: public ComandoIApresentacaoInvestimentos{
-    public:
-        void executar(IServicoInvestimentos*);
-};
-
-//----------------------------------------------------------------------------------
-
-class ComandoIApresentacaoInvestimentosListarOrdens: public ComandoIApresentacaoInvestimentos{
-    public:
-        void executar(IServicoInvestimentos*);
-};
-
-*/
 
 #endif // COMANDOS_H_INCLUDED
