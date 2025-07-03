@@ -95,6 +95,7 @@ class ComandoApresentacaoInvestimentosListarOrdens: public ComandoApresentacaoIn
 };
 
 //CAMADA DE SERVIÇO
+//Comandos de carteira
 
 class ComandoServicoInvestimentosCarteira{
     public:
@@ -131,15 +132,8 @@ class ComandoServicoInvestimentosCarteiraExcluir: public ComandoServicoInvestime
         bool executar(Carteira&);
 };
 
-//----------------------------------------------------------------------------------
-
-class ComandoServicoInvestimentosCarteiraListar: public ComandoServicoInvestimentosCarteira{
-    public:
-        bool executar(Carteira&);
-
-};
-
 //-----------------------------------------------------------------------------------
+//comandos de ordem
 
 class ComandoServicoInvestimentosOrdem{
     public:
@@ -169,12 +163,6 @@ class ComandoServicoInvestimentosOrdemExcluir: public ComandoServicoInvestimento
 };
 
 //----------------------------------------------------------------------------------
-
-class ComandoServicoInvestimentosOrdemListar: public ComandoServicoInvestimentosOrdem{
-    public:
-        bool executar(Ordem&);
-};
-
 
 
 #endif // COMANDOS_H_INCLUDED

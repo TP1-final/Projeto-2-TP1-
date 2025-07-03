@@ -222,11 +222,12 @@
 1751461846 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\dominios.cpp
 	"dominios.h"
 
-1751461846 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\dominios.h
+1751552093 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\dominios.h
 	<stdexcept>
 	<regex>
 	<string>
 	<unordered_set>
+	<list>
 
 1751461846 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\entidades.cpp
 	"entidades.h"
@@ -282,11 +283,11 @@
 	"interfaces.h"
 	<string>
 
-1751473821 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\interfaces.h
+1751552133 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\interfaces.h
 	"dominios.h"
 	"entidades.h"
 
-1751481389 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.cpp
+1751551750 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.cpp
 	"controladorasApresentacao.h"
 	"comandos.h"
 
@@ -298,10 +299,10 @@
 	"entidades.h"
 	"interfaces.h"
 
-1751488571 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\comandos.cpp
+1751553087 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\comandos.cpp
 	"comandos.h"
 
-1751479092 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\comandos.h
+1751553062 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\comandos.h
 	"dominios.h"
 	"entidades.h"
 	"interfaces.h"
@@ -316,11 +317,11 @@
 	"entidades.h"
 	<map>
 
-1751474232 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasservico.cpp
+1751552968 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasservico.cpp
 	"controladorasServico.h"
 	"comandos.h"
 
-1751473852 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasservico.h
+1751552123 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasservico.h
 	<conio.h>
 	<iostream>
 	<string.h>

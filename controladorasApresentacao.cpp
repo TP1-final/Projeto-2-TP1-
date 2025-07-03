@@ -385,6 +385,11 @@ void CntrApresentacaoInvestimentos::executar(const Cpf& cpf){
                 delete comando;
                 break;
 
+            case LISTAR_CARTEIRAS: comando = new ComandoApresentacaoInvestimentosListarCarteiras();
+                comando->executar(cntrServicoInvestimentos, cpf);
+                delete comando;
+                break;
+
             case 0: apresentar = false;
 
         }

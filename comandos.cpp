@@ -238,6 +238,33 @@ void ComandoApresentacaoInvestimentosExcluirCarteira::executar(IServicoInvestime
 
 }
 
+void ComandoApresentacaoInvestimentosListarCarteiras::executar(IServicoInvestimentos* cntrServicoInvestimentos, Cpf cpf){
+
+    CLR_SCR;
+
+    list<Carteira> carteiras = cntrServicoInvestimentos->listarCarteiras(cpf);
+
+    if(carteiras.empty()){
+        cout << "Nao foram encontradas carteiras para o CPF cadastrado!" << endl;
+        cout << "Pressione qualquer telca para continuar...";
+        getch();
+        return;
+    }
+
+    cout << "Listando carteiras encontradas:" << endl;
+
+    for(list<Carteira>::iterator carteira = carteiras.begin(); carteira != carteiras.end(); carteira++){
+        cout << "-------------------------------------------------------------------------" << endl;
+        cout << "Codigo: " << carteira->getCodigo().getValor() << endl;
+        cout << "Nome: " << carteira->getNome().getValor() << endl;
+        cout << "Perfil: " << carteira->getPerfil().getValor() << endl;
+        cout << "-------------------------------------------------------------------------" << endl << endl;
+    }
+    cout << "Listagem finalizada! Pressione qualquer tecla para continuar...";
+    getch();
+
+}
+
 //CAMADA DE SERVIÇO
 
 bool ComandoServicoInvestimentosCarteiraCriar::executar(Carteira& carteira){
@@ -274,10 +301,6 @@ bool ComandoServicoInvestimentosCarteiraExcluir::executar(Carteira& carteira){
     return true;
 }
 
-bool ComandoServicoInvestimentosCarteiraListar::executar(Carteira& carteira){
-    return true;
-}
-
 bool ComandoServicoInvestimentosOrdemCriar::executar(Ordem& ordem){
     return true;
 }
@@ -287,9 +310,5 @@ bool ComandoServicoInvestimentosOrdemLer::executar(Ordem& ordem){
 }
 
 bool ComandoServicoInvestimentosOrdemExcluir::executar(Ordem& ordem){
-    return true;
-}
-
-bool ComandoServicoInvestimentosOrdemListar::executar(Ordem& ordem){
     return true;
 }
