@@ -80,24 +80,12 @@ list<Carteira> CntrServicoInvestimentos::listarCarteiras(Cpf cpf){
 
 }
 
-list<Ordem> CntrServicoInvestimentos::listarOrdens(Codigo codigoCarteira, Cpf cpf){
-    list<Ordem> resultado;
+list<Ordem> CntrServicoInvestimentos::listarOrdens(Codigo codigoCarteira){
 
-    // Recupera ordens do container e filtra pelo código da carteira e CPF.
-    // Como a entidade Ordem não possui, até o momento, um vínculo explícito com a carteira,
-    // o critério adotado será comparar o código da carteira com o código da própria ordem.
-    // Caso deseje uma lógica mais rica, é necessário estender a entidade.
+   ContainerOrdem *container = ContainerOrdem::getInstancia();
+    list<Ordem> todas = container->listar(codigoCarteira);
 
-   /* ContainerOrdem *container = ContainerOrdem::getInstancia();
-    list<Ordem> todas = container->listar();
-
-    for(const auto &ordem : todas){
-        if(ordem.getCodigo().getValor() == codigoCarteira.getValor()){
-            resultado.push_back(ordem);
-        }
-    }
-*/
-    return resultado;
+    return todas;
 }
 bool CntrServicoAutenticacao::autenticar(Cpf cpf, Senha senha){
     ContainerConta *container;

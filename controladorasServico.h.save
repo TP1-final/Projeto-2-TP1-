@@ -4,6 +4,7 @@
 #include <conio.h>
 #include <iostream>
 #include <string.h>
+#include <list>
 
 #include "dominios.h"
 #include "entidades.h"
@@ -13,7 +14,7 @@
 #define CLR_SCR system("cls");
 
 //--------------------------------------------------------------------------------------------
-// Declarações de classes controladoras de serviço.
+// Declaraï¿½ï¿½es de classes controladoras de serviï¿½o.
 
 class CntrServicoAutenticacao: public IServicoAutenticacao {
     public:
@@ -22,17 +23,17 @@ class CntrServicoAutenticacao: public IServicoAutenticacao {
 
 class CntrServicoContas: public IServicoContas {
     public:
-        bool criarConta(Conta) = 0;
-        bool lerDados(Conta&) = 0;
-        bool editarDados(Conta) = 0;
-        bool excluirDados(Cpf) = 0;
+        bool criarConta(Conta);
+        bool lerDados(Conta&);
+        bool editarDados(Conta);
+        bool excluirDados(Cpf);
 };
 
 //---------------------------------------------------------------------------------------------------
 
 class CntrServicoInvestimentos: public IServicoInvestimentos{
     private:
-        //códigos dos serviços
+        //cï¿½digos dos serviï¿½os
         const static int CRIAR_CARTEIRA = 1;
         const static int LER_CARTEIRA = 2;
         const static int EDITAR_CARTEIRA = 3;
@@ -48,6 +49,7 @@ class CntrServicoInvestimentos: public IServicoInvestimentos{
         bool executar(Ordem&, int);
         list<Carteira> listarCarteiras(Cpf);
         list<Ordem> listarOrdens(Codigo);
+       // list<Ordem> listarOrdens(Codigo);
 
  };
 

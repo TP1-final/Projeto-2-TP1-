@@ -195,3 +195,13 @@ list<Carteira> ContainerCarteira::listar(Cpf cpf) {
     }
     return carteiras;
 }
+
+list<Ordem> ContainerOrdem::listar(Codigo codigoCarteira) {
+    list<Ordem> ordens;
+    for(auto it = container.begin(); it != container.end(); it++){
+        if(it->second.getCodigoCarteira().getValor() == codigoCarteira.getValor()){
+            ordens.push_back(it->second);
+        }
+    }
+    return ordens;
+}

@@ -48,7 +48,7 @@ class CntrServicoInvestimentos: public IServicoInvestimentos{
         bool executar(Carteira&, int);
         bool executar(Ordem&, int);
         list<Carteira> listarCarteiras(Cpf);
-        list<Ordem> listarOrdens(Codigo, Cpf);
+        list<Ordem> listarOrdens(Codigo);
        // list<Ordem> listarOrdens(Codigo);
 
  };

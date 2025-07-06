@@ -68,6 +68,7 @@ class ContainerOrdem{
         bool incluir(Ordem); // Métodos responsáveis por prestar serviços.
         bool remover(Codigo);
         bool pesquisar(Ordem&);
+        list<Ordem> listar(Codigo);
         map<string, Ordem>::iterator begin() {
             return container.begin();
         }

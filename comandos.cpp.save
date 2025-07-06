@@ -260,6 +260,7 @@ void ComandoApresentacaoInvestimentosListarCarteiras::executar(IServicoInvestime
         cout << "Codigo: " << carteira->getCodigo().getValor() << endl;
         cout << "Nome: " << carteira->getNome().getValor() << endl;
         cout << "Perfil: " << carteira->getPerfil().getValor() << endl;
+        cout << "Saldo da carteira: " << carteira->getSaldo() << endl;
         cout << "-------------------------------------------------------------------------" << endl << endl;
     }
     cout << "Listagem finalizada! Pressione qualquer tecla para continuar...";
@@ -298,10 +299,10 @@ bool ComandoServicoInvestimentosCarteiraExcluir::executar(Carteira& carteira){
 }
 
 bool ComandoServicoInvestimentosOrdemCriar::executar(Ordem& ordem){
-//    ContainerOrdem *container = ContainerOrdem::getInstancia();
-  //  return container->incluir(ordem);
+    ContainerOrdem *container = ContainerOrdem::getInstancia();
 
-string linha, codigo = "HYPE3       ";                    // Código do papel procurado composto por 12 caracteres.
+string linha, codigo = ordem.getCodigoNegociacao().getValor();                    // Código do papel procurado composto por 12 caracteres.
+codigo.resize(12, ' ');
 
 cout << "CODIGO      = " << codigo << "\n";
 
@@ -313,31 +314,34 @@ while (getline(Arquivo, linha)) { // Ler cada linha do arquivo.
         cout << "DATA        = " << linha.substr(2,8) << "\n";
         cout << "PRECO_MEDIO = " << std::stod(linha.substr(113,13))/100 << "\n";
         string dataAtivo = linha.substr(2,8);
-        if(ordem.getData().getValor().compare(dataAtivo)){
-            float precoAtivo = std::stof(linha.substr(113,13))/100;
+        if(ordem.getData().getValor().compare(dataAtivo) == 0){
+            float precoMedio = std::stof(linha.substr(113,13))/100;
+            float precoOrdem = precoMedio * ordem.getQuantidade().getValor();
             Dinheiro preco;
-            preco.setValor(precoAtivo);
-            cout << "PRECO DA ORDEM DEFINIDO:";
+            preco.setValor(precoOrdem);
+            cout << "PRECO DA ORDEM DEFINIDO:" << precoOrdem << endl;
+            ordem.setPreco(preco);
+            if(container->incluir(ordem)){
+                Arquivo.close();
+                return true;
+            }
         }
 
     }
+    Arquivo.close();
+    return false;
 }
-
-Arquivo.close();                                         // Fechar arquivo
-
-  return true;
 }
 
 bool ComandoServicoInvestimentosOrdemLer::executar(Ordem& ordem){
-  //  ContainerOrdem *container = ContainerOrdem::getInstancia();
-    //return container->pesquisar(&ordem);
-    return true;
+    ContainerOrdem *container = ContainerOrdem::getInstancia();
+    return container->pesquisar(ordem);
 }
 
 bool ComandoServicoInvestimentosOrdemExcluir::executar(Ordem& ordem){
-   // ContainerOrdem *container = ContainerOrdem::getInstancia();
-    //return container->remover(ordem.getCodigo());
-    return true;
+    ContainerOrdem *container = ContainerOrdem::getInstancia();
+    return container->remover(ordem.getCodigo());
+
 }
 
 //COMANDOS DE ORDEM – CAMADA DE APRESENTAÇÃO
@@ -356,6 +360,7 @@ void ComandoApresentacaoInvestimentosCriarOrdem::executar(IServicoInvestimentos 
     //float valorPreco;
     int valorQuantidade;
 
+    fflush(stdin);
     cout << "Codigo da carteira: ";
     cin >> campoCodigoCarteira;
     cout << "Codigo da ordem: ";
@@ -486,7 +491,7 @@ void ComandoApresentacaoInvestimentosListarOrdens::executar(IServicoInvestimento
         return;
     }
 
-    list<Ordem> ordens = cntrServicoInvestimentos->listarOrdens(codigoCarteira, cpf);
+    list<Ordem> ordens = cntrServicoInvestimentos->listarOrdens(codigoCarteira);
 
     if(ordens.empty()){
         cout << "Nenhuma ordem encontrada para a carteira informada." << endl;
@@ -499,7 +504,7 @@ void ComandoApresentacaoInvestimentosListarOrdens::executar(IServicoInvestimento
     for(const auto &ordem : ordens){
         cout << "--------------------------------------------------------------" << endl;
         cout << "Codigo: " << ordem.getCodigo().getValor() << endl;
-        cout << "Codigo Negociação: " << ordem.getCodigoNegociacao().getValor() << endl;
+        cout << "Codigo de Negociacao: " << ordem.getCodigoNegociacao().getValor() << endl;
         cout << "Data: " << ordem.getData().getValor() << endl;
         cout << "Preco: " << ordem.getPreco().getValor() << endl;
         cout << "Quantidade: " << ordem.getQuantidade().getValor() << endl;

@@ -65,6 +65,6 @@ class IServicoInvestimentos{
         virtual bool executar(Carteira&, int) = 0;
         virtual bool executar(Ordem&, int) = 0;
         virtual list<Carteira> listarCarteiras(Cpf) = 0;
-        virtual list<Ordem> listarOrdens(Codigo, Cpf) = 0;
+        virtual list<Ordem> listarOrdens(Codigo) = 0;
 };
 #endif // INTERFACES_H_INCLUDED
