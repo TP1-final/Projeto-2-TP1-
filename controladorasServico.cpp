@@ -73,41 +73,11 @@ bool CntrServicoInvestimentos::executar(Ordem& ordem, int opcao){
 }
 
 list<Carteira> CntrServicoInvestimentos::listarCarteiras(Cpf cpf){
-    Codigo codigo;
-    codigo.setValor("12345");
-    Nome nome;
-    nome.setValor("Juliana Stuart");
-    Perfil perfil;
-    perfil.setValor("Agressivo");
+    ContainerCarteira *container;
+    container = ContainerCarteira::getInstancia();
 
-    Carteira carteira1;
+    return container->listar(cpf);
 
-    carteira1.setCpf(cpf);
-    carteira1.setCodigo(codigo);
-    carteira1.setNome(nome);
-    carteira1.setPerfil(perfil);
-
-    codigo.setValor("67890");
-    nome.setValor("Pedro Afonso");
-    perfil.setValor("Moderado");
-
-    Carteira carteira2;
-
-    carteira2.setCpf(cpf);
-    carteira2.setCodigo(codigo);
-    carteira2.setNome(nome);
-    carteira2.setPerfil(perfil);
-
-    list<Carteira> carteiras;
-
-    //gatilho para teste
-    if(cpf.getValor().compare("03723725112") == 0)
-        return carteiras;
-
-    carteiras.push_back(carteira1);
-    carteiras.push_back(carteira2);
-
-    return carteiras;
 }
 
 list<Ordem> CntrServicoInvestimentos::listarOrdens(Codigo codigoCarteira, Cpf cpf){

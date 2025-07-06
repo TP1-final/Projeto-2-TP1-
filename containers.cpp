@@ -186,3 +186,12 @@ bool ContainerOrdem::pesquisar(Ordem& ordem) {
     return false;
 }
 
+list<Carteira> ContainerCarteira::listar(Cpf cpf) {
+    list<Carteira> carteiras;
+    for(auto it = container.begin(); it != container.end(); it++){
+        if(it->second.getCpf().getValor() == cpf.getValor()){
+            carteiras.push_back(it->second);
+        }
+    }
+    return carteiras;
+}

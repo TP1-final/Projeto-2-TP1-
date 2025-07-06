@@ -120,6 +120,7 @@ void ComandoApresentacaoInvestimentosLerCarteira::executar(IServicoInvestimentos
         cout << "CPF associado: " << carteira.getCpf().getValor() << endl;
         cout << "Nome: " << carteira.getNome().getValor() << endl;
         cout << "Perfil: " << carteira.getPerfil().getValor() << endl;
+        cout << "Saldo da carteira: " << carteira.getSaldo() << endl;
         cout << "Pressione qualquer tecla para continuar...";
         getch();
     }
@@ -259,6 +260,7 @@ void ComandoApresentacaoInvestimentosListarCarteiras::executar(IServicoInvestime
         cout << "Codigo: " << carteira->getCodigo().getValor() << endl;
         cout << "Nome: " << carteira->getNome().getValor() << endl;
         cout << "Perfil: " << carteira->getPerfil().getValor() << endl;
+        cout << "Saldo da carteira: " << carteira->getSaldo() << endl;
         cout << "-------------------------------------------------------------------------" << endl << endl;
     }
     cout << "Listagem finalizada! Pressione qualquer tecla para continuar...";
@@ -269,42 +271,61 @@ void ComandoApresentacaoInvestimentosListarCarteiras::executar(IServicoInvestime
 //CAMADA DE SERVIÇO
 
 bool ComandoServicoInvestimentosCarteiraCriar::executar(Carteira& carteira){
-    if(carteira.getCpf().getValor() == "18059792059")
-        return false;
-    return true;
+    ContainerCarteira *container;
+    container = ContainerCarteira::getInstancia();
+
+    return container->incluir(carteira);
 }
 
 bool ComandoServicoInvestimentosCarteiraLer::executar(Carteira& carteira){
-    if(carteira.getCodigo().getValor().compare("12345") == 0)
-        return false;
+    ContainerCarteira *container;
+    container = ContainerCarteira::getInstancia();
 
-    Nome nome;
-    Perfil perfil;
-
-    nome.setValor("Carteira1");
-    perfil.setValor("Agressivo");
-
-    carteira.setNome(nome);
-    carteira.setPerfil(perfil);
-
-    return true;
+    return container->pesquisar(carteira);
 }
 
 bool ComandoServicoInvestimentosCarteiraEditar::executar(Carteira& carteira){
-    if(carteira.getCodigo().getValor().compare("12345") == 0)
-        return false;
-    return true;
+     ContainerCarteira *container;
+    container = ContainerCarteira::getInstancia();
+
+    return container->atualizar(carteira);
 }
 
 bool ComandoServicoInvestimentosCarteiraExcluir::executar(Carteira& carteira){
-    if(carteira.getCodigo().getValor().compare("12345") == 0)
-        return false;
-    return true;
+    ContainerCarteira *container;
+    container = ContainerCarteira::getInstancia();
+
+    return container->remover(carteira.getCodigo());
 }
 
 bool ComandoServicoInvestimentosOrdemCriar::executar(Ordem& ordem){
 //    ContainerOrdem *container = ContainerOrdem::getInstancia();
   //  return container->incluir(ordem);
+
+string linha, codigo = "HYPE3       ";                    // Código do papel procurado composto por 12 caracteres.
+
+cout << "CODIGO      = " << codigo << "\n";
+
+ifstream Arquivo("DADOS_HISTORICOS.TXT");                // Abre arquivo.
+
+
+while (getline(Arquivo, linha)) { // Ler cada linha do arquivo.
+    if(codigo.compare(linha.substr(12,12)) == 0){
+        cout << "DATA        = " << linha.substr(2,8) << "\n";
+        cout << "PRECO_MEDIO = " << std::stod(linha.substr(113,13))/100 << "\n";
+        string dataAtivo = linha.substr(2,8);
+        if(ordem.getData().getValor().compare(dataAtivo)){
+            float precoAtivo = std::stof(linha.substr(113,13))/100;
+            Dinheiro preco;
+            preco.setValor(precoAtivo);
+            cout << "PRECO DA ORDEM DEFINIDO:";
+        }
+
+    }
+}
+
+Arquivo.close();                                         // Fechar arquivo
+
   return true;
 }
 
@@ -333,7 +354,7 @@ void ComandoApresentacaoInvestimentosCriarOrdem::executar(IServicoInvestimentos 
     char campoCodigoOrdem[80];
     char campoCodigoNeg[80];
     char campoData[80];
-    float valorPreco;
+    //float valorPreco;
     int valorQuantidade;
 
     cout << "Codigo da carteira: ";
@@ -344,8 +365,8 @@ void ComandoApresentacaoInvestimentosCriarOrdem::executar(IServicoInvestimentos 
     cin >> campoCodigoNeg;
     cout << "Data (AAAAMMDD): ";
     cin >> campoData;
-    cout << "Preco unitario (>=0): ";
-    cin >> valorPreco;
+    //cout << "Preco unitario (>=0): ";
+    //cin >> valorPreco;
     cout << "Quantidade (inteiro > 0): ";
     cin >> valorQuantidade;
 
@@ -353,7 +374,7 @@ void ComandoApresentacaoInvestimentosCriarOrdem::executar(IServicoInvestimentos 
     Codigo codigoCarteira, codigoOrdem;
     CodigoNegociacao codigoNeg;
     Data data;
-    Dinheiro preco;
+    //Dinheiro preco;
     Quantidade quantidade;
 
     try{
@@ -361,7 +382,7 @@ void ComandoApresentacaoInvestimentosCriarOrdem::executar(IServicoInvestimentos 
         codigoOrdem.setValor(string(campoCodigoOrdem));
         codigoNeg.setValor(string(campoCodigoNeg));
         data.setValor(string(campoData));
-        preco.setValor(valorPreco);
+        //preco.setValor(valorPreco);
         quantidade.setValor(valorQuantidade);
     }
     catch(invalid_argument &e){
@@ -376,15 +397,9 @@ void ComandoApresentacaoInvestimentosCriarOrdem::executar(IServicoInvestimentos 
     ordem.setcodigoCarteira(codigoCarteira);
     ordem.setCodigoNegociacao(codigoNeg);
     ordem.setData(data);
-    ordem.setPreco(preco);
+    //ordem.setPreco(preco);
     ordem.setQuantidade(quantidade);
 
-    // Para vincular ordem à carteira utilizamos o mesmo código da carteira na própria ordem
-    // (conforme critério em listarOrdens).
-    if(codigoOrdem.getValor() != codigoCarteira.getValor()){
-        // copia código da carteira para ordem se desejar manter consistência do filtro.
-        ordem.setCodigo(codigoCarteira);
-    }
 
     if(cntrServicoInvestimentos->executar(ordem, ComandoApresentacaoInvestimentos::CRIAR_ORDEM)){
         cout << "Ordem criada com sucesso! Pressione qualquer tecla para continuar...";

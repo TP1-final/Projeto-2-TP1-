@@ -84,7 +84,7 @@ bool ContainerCarteira::remover(Codigo codigo) {
     ContainerOrdem *container_ordem;
     container_ordem = ContainerOrdem::getInstancia();
 
-    for(auto it = container_ordem.begin(); it != container_ordem.end(); it++){
+    for(auto it = container_ordem->begin(); it != container_ordem->end(); it++){
         if(it->second.getCodigo().getValor() == codigo.getValor()){
             return false;
         }
@@ -169,7 +169,6 @@ bool ContainerOrdem::incluir(Ordem ordem) {
 }
 
 bool ContainerOrdem::remover(Codigo codigo) {
-   bool ContainerOrdem::remover(Codigo codigo) {
     map<string, Ordem>::iterator it = container.find(codigo.getValor());
     if(it != container.end()){
         container.erase(it);
@@ -178,15 +177,21 @@ bool ContainerOrdem::remover(Codigo codigo) {
     return false;
 }
 
-}
-
-bool ContainerOrdem::pesquisar(Ordem* ordem) {
-    auto it = container.find(ordem->getCodigo().getValor());
-    if (it != container.end()) {
-        *ordem = it->second;
+bool ContainerOrdem::pesquisar(Ordem& ordem) {
+    map<string, Ordem>::iterator it = container.find(ordem.getCodigo().getValor());
+    if(it != container.end()){
+        ordem = it->second;
         return true;
     }
     return false;
 }
 
-
+list<Carteira> ContainerCarteira::listar(Cpf cpf) {
+    list<Carteira> carteiras;
+    for(auto it = container.begin(); it != container.end(); it++){
+        if(it->second.getCpf().getValor() == cpf.getValor()){
+            carteiras.push_back(it->second);
+        }
+    }
+    return carteiras;
+}

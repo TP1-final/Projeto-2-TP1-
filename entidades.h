@@ -58,6 +58,8 @@ class Conta { // Matrícula: 160023629
              * @return Objeto da classe Senha contendo a senha armazenada
              */
             Senha getSenha() const;
+
+            float getSaldo();
 };
 
 inline void Conta::setCpf(const Cpf &valor){
@@ -138,6 +140,8 @@ class Carteira { // Matrícula: 160023629
         Perfil getPerfil() const;
 
         Cpf getCpf() const;
+
+        float getSaldo();
 };
 
 inline void Carteira::setCodigo(const Codigo &valor){
@@ -255,6 +259,7 @@ class Ordem { // Matrícula: 160023629
 
         //
         Codigo getCodigoCarteira() const;
+
 };
 
 inline void Ordem::setcodigoCarteira(const Codigo &valor){

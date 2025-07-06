@@ -58,6 +58,8 @@ class Conta { // Matrícula: 160023629
              * @return Objeto da classe Senha contendo a senha armazenada
              */
             Senha getSenha() const;
+            
+            float getSaldo();
 };
 
 inline void Conta::setCpf(const Cpf &valor){
@@ -138,6 +140,8 @@ class Carteira { // Matrícula: 160023629
         Perfil getPerfil() const;
 
         Cpf getCpf() const;
+
+        float getSaldo();
 };
 
 inline void Carteira::setCodigo(const Codigo &valor){
@@ -223,10 +227,10 @@ class Ordem { // Matrícula: 160023629
          * @brief Recupera o código identificador da ordem
          * @return Objeto da classe Codigo contendo o código armazenado
          */
-         
+
          //
         void setcodigoCarteira(const Codigo&);
-        
+
         Codigo getCodigo() const;
 
         /**
@@ -255,10 +259,11 @@ class Ordem { // Matrícula: 160023629
 
         //
         Codigo getCodigoCarteira() const;
+
 };
 
 inline void Ordem::setcodigoCarteira(const Codigo &valor){
-    
+    codigoCarteira = valor;
 }
 inline void Ordem::setCodigo(const Codigo &valor){
     this->codigo = valor;
@@ -298,6 +303,10 @@ inline void Ordem::setQuantidade(const Quantidade &valor){
 
 inline Quantidade Ordem::getQuantidade() const{
     return quantidade;
+}
+
+inline Codigo Ordem::getCodigoCarteira() const{
+    return codigoCarteira;
 }
 
 #endif // ENTIDADES_H_INCLUDED

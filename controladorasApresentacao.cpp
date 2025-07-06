@@ -169,6 +169,7 @@ void CntrApresentacaoContas::executar(Cpf cpf){
                     cout << "Nome: " << conta.getNome().getValor() << endl;
                     cout << "CPF: " << conta.getCpf().getValor() << endl;
                     cout << "Senha: " << conta.getSenha().getValor() << endl;
+                    cout << "Saldo da conta: " << conta.getSaldo() << endl;
                     cout << "Pressione qualquer tecla para continuar...";
                     getch();
                 }
@@ -357,7 +358,7 @@ void CntrApresentacaoInvestimentos::executar(const Cpf& cpf){
         cout << "Editar dados da carteira - " << EDITAR_CARTEIRA << endl;
         cout << "Excluir carteira - " << EXCLUIR_CARTEIRA << endl;
         cout << "Listar carteiras associadas a conta - " << LISTAR_CARTEIRAS << endl;
-        cout << endl << "SERVI�OS DE ORDEM" << endl << endl;
+        cout << endl << "SERVICOS DE ORDEM" << endl << endl;
         cout << "Criar ordem - " << CRIAR_ORDEM << endl;
         cout << "Ler dados da ordem - " << LER_ORDEM << endl;
         cout << "Excluir ordem - " << EXCLUIR_ORDEM << endl;

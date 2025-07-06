@@ -229,12 +229,13 @@
 	<unordered_set>
 	<list>
 
-1751553313 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\entidades.cpp
+1751834703 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\entidades.cpp
 	"entidades.h"
+	"containers.h"
 
 1751414305 D
 
-1751826762 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\entidades.h
+1751834689 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\entidades.h
 	"dominios.h"
 
 1751827767 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\main.cpp
@@ -287,7 +288,7 @@
 	"dominios.h"
 	"entidades.h"
 
-1751768470 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.cpp
+1751834613 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasapresentacao.cpp
 	"controladorasApresentacao.h"
 	"comandos.h"
 
@@ -299,8 +300,9 @@
 	"entidades.h"
 	"interfaces.h"
 
-1751553087 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\comandos.cpp
+1751840300 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\comandos.cpp
 	"comandos.h"
+	<list>
 
 1751768460 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\comandos.h
 	"dominios.h"
@@ -312,14 +314,14 @@
 	<cstdlib>
 	<conio.h>
 
-1751831814 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\containers.h
+1751839782 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\containers.h
 	"dominios.h"
 	"entidades.h"
 	<map>
 	<list>
 	<bits/stdc++.h>
 
-1751831884 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasservico.cpp
+1751839950 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\controladorasservico.cpp
 	"controladorasServico.h"
 	"containers.h"
 	"comandos.h"
@@ -521,6 +523,6 @@
 1751831876 source:c:\users\etec0\downloads\projeto-2-tp1--moduloapresentacaoinvestimentosv3\containers.cpp
 	"containers.h"
 
-1751831876 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\containers.cpp
+1751839782 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\containers.cpp
 	"containers.h"
 

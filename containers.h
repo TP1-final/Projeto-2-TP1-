@@ -45,6 +45,7 @@ class ContainerCarteira{
         bool remover(Codigo);
         bool pesquisar(Carteira&);
         bool atualizar(Carteira);
+        list<Carteira> listar(Cpf);
 
         map<string, Carteira>::iterator begin() {
             return container.begin();
