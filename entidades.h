@@ -187,6 +187,7 @@ class Ordem { // Matrícula: 160023629
         Data data;
         Dinheiro preco;
         Quantidade quantidade;
+        Codigo codigoCarteira;
     public:
         /**
          * @brief Define o código identificador da ordem
@@ -222,6 +223,10 @@ class Ordem { // Matrícula: 160023629
          * @brief Recupera o código identificador da ordem
          * @return Objeto da classe Codigo contendo o código armazenado
          */
+
+         //
+        void setcodigoCarteira(const Codigo&);
+
         Codigo getCodigo() const;
 
         /**
@@ -248,8 +253,13 @@ class Ordem { // Matrícula: 160023629
          */
         Quantidade getQuantidade() const;
 
+        //
+        Codigo getCodigoCarteira() const;
 };
 
+inline void Ordem::setcodigoCarteira(const Codigo &valor){
+    codigoCarteira = valor;
+}
 inline void Ordem::setCodigo(const Codigo &valor){
     this->codigo = valor;
 }
@@ -288,6 +298,10 @@ inline void Ordem::setQuantidade(const Quantidade &valor){
 
 inline Quantidade Ordem::getQuantidade() const{
     return quantidade;
+}
+
+inline Codigo Ordem::getCodigoCarteira() const{
+    return codigoCarteira;
 }
 
 #endif // ENTIDADES_H_INCLUDED

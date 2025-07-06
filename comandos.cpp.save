@@ -1,13 +1,14 @@
 #include "comandos.h"
+#include <list>
 
-//implementa��es dos m�todos dos comandos
-//CAMADA DE APRESENTA��O
+//implementações dos métodos dos comandos
+//CAMADA DE APRESENTAÇÃO
 
 void ComandoApresentacaoInvestimentosCriarCarteira::executar(IServicoInvestimentos* cntrServicoInvestimentos, Cpf cpf){
 
     CLR_SCR;
 
-    //intera��o com o usu�rio
+    //interação com o usuário
 
     char texto1[] ="Preencha os seguintes campos: ";
     char texto2[] ="Codigo da carteira:";
@@ -21,7 +22,7 @@ void ComandoApresentacaoInvestimentosCriarCarteira::executar(IServicoInvestiment
 
     char campo1[80], campo2[80], campo3[80];
 
-    //criar inst�ncias de dom�nios
+    //criar instâncias de domínios
 
     Nome nome;
     Codigo codigo;
@@ -134,7 +135,7 @@ void ComandoApresentacaoInvestimentosLerCarteira::executar(IServicoInvestimentos
 
 void ComandoApresentacaoInvestimentosEditarCarteira::executar(IServicoInvestimentos* cntrServicoInvestimentos, Cpf cpf){
 
-    //inst�ncias de dom�nios
+    //instâncias de domínios
     Codigo codigo;
     Nome nome;
     Perfil perfil;
@@ -197,12 +198,12 @@ void ComandoApresentacaoInvestimentosEditarCarteira::executar(IServicoInvestimen
 }
 
 void ComandoApresentacaoInvestimentosExcluirCarteira::executar(IServicoInvestimentos* cntrServicoInvestimentos, Cpf cpf){
-    //intancia dom�nio
+    //intancia domínio
     Codigo codigo;
 
     CLR_SCR;
 
-    //interage com o usu�rio
+    //interage com o usuário
     string campo;
     cout << "Digite o codigo da carteira que deseja excluir: ";
     cin >> campo;
@@ -265,7 +266,7 @@ void ComandoApresentacaoInvestimentosListarCarteiras::executar(IServicoInvestime
 
 }
 
-//CAMADA DE SERVI�O
+//CAMADA DE SERVIÇO
 
 bool ComandoServicoInvestimentosCarteiraCriar::executar(Carteira& carteira){
     if(carteira.getCpf().getValor() == "18059792059")
@@ -302,13 +303,196 @@ bool ComandoServicoInvestimentosCarteiraExcluir::executar(Carteira& carteira){
 }
 
 bool ComandoServicoInvestimentosOrdemCriar::executar(Ordem& ordem){
-    return true;
+//    ContainerOrdem *container = ContainerOrdem::getInstancia();
+  //  return container->incluir(ordem);
+  return true;
 }
 
 bool ComandoServicoInvestimentosOrdemLer::executar(Ordem& ordem){
-    return  true;
+  //  ContainerOrdem *container = ContainerOrdem::getInstancia();
+    //return container->pesquisar(&ordem);
+    return true;
 }
 
 bool ComandoServicoInvestimentosOrdemExcluir::executar(Ordem& ordem){
+   // ContainerOrdem *container = ContainerOrdem::getInstancia();
+    //return container->remover(ordem.getCodigo());
     return true;
 }
+
+//COMANDOS DE ORDEM – CAMADA DE APRESENTAÇÃO
+
+void ComandoApresentacaoInvestimentosCriarOrdem::executar(IServicoInvestimentos *cntrServicoInvestimentos, Cpf cpf){
+    CLR_SCR;
+
+    // Mensagens
+    cout << "Preencha os seguintes campos para criar a ordem:" << endl;
+
+    // Campos de entrada
+    char campoCodigoCarteira[80];
+    char campoCodigoOrdem[80];
+    char campoCodigoNeg[80];
+    char campoData[80];
+    float valorPreco;
+    int valorQuantidade;
+
+    cout << "Codigo da carteira: ";
+    cin >> campoCodigoCarteira;
+    cout << "Codigo da ordem: ";
+    cin >> campoCodigoOrdem;
+    cout << "Codigo de negociacao do ativo: ";
+    cin >> campoCodigoNeg;
+    cout << "Data (AAAAMMDD): ";
+    cin >> campoData;
+    cout << "Preco unitario (>=0): ";
+    cin >> valorPreco;
+    cout << "Quantidade (inteiro > 0): ";
+    cin >> valorQuantidade;
+
+    // Validação via domínios
+    Codigo codigoCarteira, codigoOrdem;
+    CodigoNegociacao codigoNeg;
+    Data data;
+    Dinheiro preco;
+    Quantidade quantidade;
+
+    try{
+        codigoCarteira.setValor(string(campoCodigoCarteira));
+        codigoOrdem.setValor(string(campoCodigoOrdem));
+        codigoNeg.setValor(string(campoCodigoNeg));
+        data.setValor(string(campoData));
+        preco.setValor(valorPreco);
+        quantidade.setValor(valorQuantidade);
+    }
+    catch(invalid_argument &e){
+        cout << e.what() << endl;
+        cout << "Dados invalidos! Pressione qualquer tecla para continuar...";
+        getch();
+        return;
+    }
+
+    Ordem ordem;
+    ordem.setCodigo(codigoOrdem);
+    ordem.setcodigoCarteira(codigoCarteira);
+    ordem.setCodigoNegociacao(codigoNeg);
+    ordem.setData(data);
+    ordem.setPreco(preco);
+    ordem.setQuantidade(quantidade);
+
+    // Para vincular ordem à carteira utilizamos o mesmo código da carteira na própria ordem
+    // (conforme critério em listarOrdens).
+    if(codigoOrdem.getValor() != codigoCarteira.getValor()){
+        // copia código da carteira para ordem se desejar manter consistência do filtro.
+        ordem.setCodigo(codigoCarteira);
+    }
+
+    if(cntrServicoInvestimentos->executar(ordem, ComandoApresentacaoInvestimentos::CRIAR_ORDEM)){
+        cout << "Ordem criada com sucesso! Pressione qualquer tecla para continuar...";
+    } else {
+        cout << "Falha ao criar ordem! Pressione qualquer tecla para continuar...";
+    }
+    getch();
+}
+
+void ComandoApresentacaoInvestimentosLerOrdem::executar(IServicoInvestimentos *cntrServicoInvestimentos, Cpf cpf){
+    CLR_SCR;
+    char campoCodigo[80];
+    cout << "Digite o codigo da ordem que deseja consultar: ";
+    cin >> campoCodigo;
+
+    Codigo codigo;
+    try{
+        codigo.setValor(string(campoCodigo));
+    }catch(invalid_argument &e){
+        cout << e.what() << endl;
+        cout << "Pressione qualquer tecla para continuar...";
+        getch();
+        return;
+    }
+
+    Ordem ordem;
+    ordem.setCodigo(codigo);
+
+    if(cntrServicoInvestimentos->executar(ordem, ComandoApresentacaoInvestimentos::LER_ORDEM)){
+        CLR_SCR;
+        cout << "DADOS DA ORDEM" << endl;
+        cout << "Codigo: " << ordem.getCodigo().getValor() << endl;
+        cout << "Codigo de Negociacao: " << ordem.getCodigoNegociacao().getValor() << endl;
+        cout << "Data: " << ordem.getData().getValor() << endl;
+        cout << "Preco: " << ordem.getPreco().getValor() << endl;
+        cout << "Quantidade: " << ordem.getQuantidade().getValor() << endl;
+        cout << "Pressione qualquer tecla para continuar...";
+        getch();
+    } else {
+        cout << "Ordem nao encontrada! Pressione qualquer tecla para continuar...";
+        getch();
+    }
+}
+
+void ComandoApresentacaoInvestimentosExcluirOrdem::executar(IServicoInvestimentos *cntrServicoInvestimentos, Cpf cpf){
+    CLR_SCR;
+    char campoCodigo[80];
+    cout << "Digite o codigo da ordem que deseja excluir: ";
+    cin >> campoCodigo;
+
+    Codigo codigo;
+    try{
+        codigo.setValor(string(campoCodigo));
+    }catch(invalid_argument &e){
+        cout << e.what() << endl;
+        cout << "Pressione qualquer tecla para continuar...";
+        getch();
+        return;
+    }
+
+    Ordem ordem;
+    ordem.setCodigo(codigo);
+
+    if(cntrServicoInvestimentos->executar(ordem, ComandoApresentacaoInvestimentos::EXCLUIR_ORDEM)){
+        cout << "Ordem excluida com sucesso! Pressione qualquer tecla para continuar...";
+    } else {
+        cout << "Falha ao excluir ordem! Pressione qualquer tecla para continuar...";
+    }
+    getch();
+}
+
+void ComandoApresentacaoInvestimentosListarOrdens::executar(IServicoInvestimentos *cntrServicoInvestimentos, Cpf cpf){
+    CLR_SCR;
+    char campoCodigoCarteira[80];
+    cout << "Digite o código da carteira para listar ordens: ";
+    cin >> campoCodigoCarteira;
+
+    Codigo codigoCarteira;
+    try{
+        codigoCarteira.setValor(string(campoCodigoCarteira));
+    }catch(invalid_argument &e){
+        cout << e.what() << endl;
+        cout << "Pressione qualquer tecla para continuar...";
+        getch();
+        return;
+    }
+
+    list<Ordem> ordens = cntrServicoInvestimentos->listarOrdens(codigoCarteira, cpf);
+
+    if(ordens.empty()){
+        cout << "Nenhuma ordem encontrada para a carteira informada." << endl;
+        cout << "Pressione qualquer tecla para continuar...";
+        getch();
+        return;
+    }
+
+    cout << "Listando ordens:" << endl;
+    for(const auto &ordem : ordens){
+        cout << "--------------------------------------------------------------" << endl;
+        cout << "Código: " << ordem.getCodigo().getValor() << endl;
+        cout << "Código Negociação: " << ordem.getCodigoNegociacao().getValor() << endl;
+        cout << "Data: " << ordem.getData().getValor() << endl;
+        cout << "Preço: " << ordem.getPreco().getValor() << endl;
+        cout << "Quantidade: " << ordem.getQuantidade().getValor() << endl;
+    }
+    cout << "--------------------------------------------------------------" << endl;
+    cout << "Listagem finalizada! Pressione qualquer tecla para continuar...";
+    getch();
+}
+
+//

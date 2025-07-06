@@ -14,7 +14,7 @@ class IServicoContas;
 class IServicoInvestimentos;
 
 //--------------------------------------------------------------------------------------------
-// Declarações das interfaces da camada de apresentação.
+// Declaraï¿½ï¿½es das interfaces da camada de apresentaï¿½ï¿½o.
 
 class IApresentacaoAutenticacao {
     public:
@@ -43,7 +43,7 @@ class IApresentacaoInvestimentos {
 
 };
 
-// Declarações das interfaces da camada de serviço.
+// Declaraï¿½ï¿½es das interfaces da camada de serviï¿½o.
 
 class IServicoAutenticacao {
     public:
@@ -65,6 +65,6 @@ class IServicoInvestimentos{
         virtual bool executar(Carteira&, int) = 0;
         virtual bool executar(Ordem&, int) = 0;
         virtual list<Carteira> listarCarteiras(Cpf) = 0;
-      //  virtual list<Ordem> listarOrdens(Codigo) = 0;
+        virtual list<Ordem> listarOrdens(Codigo, Cpf) = 0;
 };
 #endif // INTERFACES_H_INCLUDED

@@ -25,12 +25,12 @@ int main()
    cntrApresentacaoInvestimentos = new CntrApresentacaoInvestimentos();
 
    //instanciar stubs
-   IServicoAutenticacao *stubServicoAutenticacao;
-   IServicoContas *stubServicoContas;
+   IServicoAutenticacao *cntrServicoAutenticacao;
+   IServicoContas *cntrServicoContas;
    IServicoInvestimentos *cntrServicoInvestimentos;
 
-   stubServicoAutenticacao = new StubServicoAutenticacao();
-   stubServicoContas = new StubServicoContas();
+   cntrServicoAutenticacao = new CntrServicoAutenticacao();
+   cntrServicoContas = new CntrServicoContas();
    cntrServicoInvestimentos = new CntrServicoInvestimentos();
 
    //link entre controladoras e stubs (futuramente controladoras de serviços)
@@ -38,8 +38,8 @@ int main()
    cntrApresentacaoControle->setCntrApresentacaoContas(cntrApresentacaoContas);
    cntrApresentacaoControle->setCntrApresentacaoInvestimentos(cntrApresentacaoInvestimentos);
 
-    cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(stubServicoAutenticacao);
-    cntrApresentacaoContas->setCntrServicoContas(stubServicoContas);
+    cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(cntrServicoAutenticacao);
+    cntrApresentacaoContas->setCntrServicoContas(cntrServicoContas);
     cntrApresentacaoInvestimentos->setCntrServicoInvestimentos(cntrServicoInvestimentos);
 
    //solicitar serviço

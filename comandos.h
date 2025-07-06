@@ -13,8 +13,8 @@
 
 #define CLR_SCR system("cls");
 
-//declarações dos comandos
-//CAMADA DE APRESENTAÇÃO
+//declaraï¿½ï¿½es dos comandos
+//CAMADA DE APRESENTAï¿½ï¿½O
 
 class ComandoApresentacaoInvestimentos{
     public:
@@ -70,31 +70,31 @@ class ComandoApresentacaoInvestimentosListarCarteiras: public ComandoApresentaca
 
 class ComandoApresentacaoInvestimentosCriarOrdem: public ComandoApresentacaoInvestimentos{
     public:
-        void executar(IServicoInvestimentos*);
+        void executar(IServicoInvestimentos*, Cpf);
 };
 
 //----------------------------------------------------------------------------------
 
 class ComandoApresentacaoInvestimentosLerOrdem: public ComandoApresentacaoInvestimentos{
     public:
-        void executar(IServicoInvestimentos*);
+        void executar(IServicoInvestimentos*, Cpf);
 };
 
 //----------------------------------------------------------------------------------
 
 class ComandoApresentacaoInvestimentosExcluirOrdem: public ComandoApresentacaoInvestimentos{
     public:
-        void executar(IServicoInvestimentos*);
+        void executar(IServicoInvestimentos*, Cpf);
 };
 
 //----------------------------------------------------------------------------------
 
 class ComandoApresentacaoInvestimentosListarOrdens: public ComandoApresentacaoInvestimentos{
     public:
-        void executar(IServicoInvestimentos*);
+        void executar(IServicoInvestimentos*, Cpf);
 };
 
-//CAMADA DE SERVIÇO
+//CAMADA DE SERVIO
 //Comandos de carteira
 
 class ComandoServicoInvestimentosCarteira{

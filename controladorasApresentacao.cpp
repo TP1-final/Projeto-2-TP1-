@@ -1,7 +1,7 @@
 #include "controladorasApresentacao.h"
 #include "comandos.h"
 
-//Implementações dos métodos das classes controladoras
+//Implementaï¿½ï¿½es dos mï¿½todos das classes controladoras
 
 void CntrApresentacaoControle::executar(){
 
@@ -13,7 +13,7 @@ void CntrApresentacaoControle::executar(){
     //char texto4[]="3 - Acessar dados sobre produtos financeiros.";
     char texto5[]="0 - Encerrar execucao do sistema.";
 
-    // Mensagens a serem apresentadas na tela de seleção de serviço.
+    // Mensagens a serem apresentadas na tela de seleï¿½ï¿½o de serviï¿½o.
 
     char texto6[]="Selecione um dos servicos : ";
     char texto7[]="1 - Selecionar servicos de conta.";
@@ -24,7 +24,7 @@ void CntrApresentacaoControle::executar(){
 
     int campo;                                                                                  // Campo de entrada.
 
-    bool apresentar = true;                                                                     // Controle de laço.
+    bool apresentar = true;                                                                     // Controle de laï¿½o.
 
     while(apresentar){
         // Apresenta tela inicial.
@@ -37,11 +37,11 @@ void CntrApresentacaoControle::executar(){
         //cout << texto4 << endl;                                                                 // Imprime nome do campo.
         cout << texto5 << endl;                                                                 // Imprime nome do campo.
 
-        campo = getch() - 48;                                                                   // Leitura do campo de entrada e conversão de ASCII.
+        campo = getch() - 48;                                                                   // Leitura do campo de entrada e conversï¿½o de ASCII.
 
         switch(campo){
-            case 1: if(cntrApresentacaoAutenticacao->autenticar(&cpf)){                         // Solicita autenticação.
-                        bool apresentar = true;                                                 // Controle de laço.
+            case 1: if(cntrApresentacaoAutenticacao->autenticar(&cpf)){                         // Solicita autenticaï¿½ï¿½o.
+                        bool apresentar = true;                                                 // Controle de laï¿½o.
                         while(apresentar){
                                 //verifica se a conta foi excluida
                                     if(cntrApresentacaoContas->isContaExcluida()){
@@ -49,7 +49,7 @@ void CntrApresentacaoControle::executar(){
                                         break;
                                     }
 
-                            // Apresenta tela de seleção de serviço.
+                            // Apresenta tela de seleï¿½ï¿½o de serviï¿½o.
 
                             CLR_SCR;                                                            // Limpa janela.
 
@@ -58,12 +58,12 @@ void CntrApresentacaoControle::executar(){
                             cout << texto8 << endl;                                             // Imprime nome do campo.
                             cout << texto9 << endl;                                             // Imprime nome do campo.
 
-                            campo = getch() - 48;                                               // Leitura do campo de entrada e conversão de ASCII.
+                            campo = getch() - 48;                                               // Leitura do campo de entrada e conversï¿½o de ASCII.
 
                             switch(campo){
-                                case 1: cntrApresentacaoContas->executar(cpf);                 // Solicita serviço de pessoal.
+                                case 1: cntrApresentacaoContas->executar(cpf);                 // Solicita serviï¿½o de pessoal.
                                         break;
-                                case 2: cntrApresentacaoInvestimentos->executar(cpf);     // Solicita serviço de produto financeiro.
+                                case 2: cntrApresentacaoInvestimentos->executar(cpf);     // Solicita serviï¿½o de produto financeiro.
                                         break;
                                 case 0: apresentar = false;
                                         break;
@@ -89,7 +89,7 @@ void CntrApresentacaoControle::executar(){
 
 bool CntrApresentacaoAutenticacao::autenticar(Cpf *cpf){
 
-    // Mensagens a serem apresentadas na tela de autenticação.
+    // Mensagens a serem apresentadas na tela de autenticaï¿½ï¿½o.
 
     char texto1[]="Digite o CPF  : ";
     char texto2[]="Digite a senha: ";
@@ -104,29 +104,29 @@ bool CntrApresentacaoAutenticacao::autenticar(Cpf *cpf){
 
     while(true){
 
-        // Apresenta tela de autenticação.
+        // Apresenta tela de autenticaï¿½ï¿½o.
 
         CLR_SCR;                                                                                // Limpa janela.
 
         cout << texto1 << " ";                                                                  // Imprime nome do campo.
-        cin >> campo1;                                                                          // Lê valor do campo.
+        cin >> campo1;                                                                          // Lï¿½ valor do campo.
         cout << texto2 << " ";                                                                  // Imprime nome do campo.
-        cin >> campo2;                                                                          // Lê valor do campo.
+        cin >> campo2;                                                                          // Lï¿½ valor do campo.
 
         try{
             cpf->setValor(string(campo1));                                                      // Atribui valor ao CPF.
-            senha.setValor(string(campo2));                                                     // Atribui Valor à senha.
-            break;                                                                              // Abandona laço em caso de formatos corretos.
+            senha.setValor(string(campo2));                                                     // Atribui Valor ï¿½ senha.
+            break;                                                                              // Abandona laï¿½o em caso de formatos corretos.
         }
-        catch(invalid_argument &exp){                                                           // Captura exceção devido a formato incorreto.
+        catch(invalid_argument &exp){                                                           // Captura exceï¿½ï¿½o devido a formato incorreto.
             CLR_SCR;
             cout << exp.what() << endl;                                                                           // Limpa janela.
             cout << texto3 << endl;                                                             // Informa formato incorreto.
             getch();
-            return false;                                                                            // Lê caracter digitado.
+            return false;                                                                            // Lï¿½ caracter digitado.
         }
     }
-    return (cntr->autenticar(*cpf, senha));                                                     // Solicita serviço de autenticação.
+    return (cntr->autenticar(*cpf, senha));                                                     // Solicita serviï¿½o de autenticaï¿½ï¿½o.
 }
 
 //--------------------------------------------------------------------------------------------
@@ -145,7 +145,7 @@ void CntrApresentacaoContas::executar(Cpf cpf){
     bool apresentar = true;
 
     while(apresentar){
-        //tela de apresentação do serviço
+        //tela de apresentaï¿½ï¿½o do serviï¿½o
 
         CLR_SCR;
 
@@ -278,7 +278,7 @@ void CntrApresentacaoContas::criarConta(){
 
     char campo1[80], campo2[80], campo3[80];
 
-    //criar instâncias de domínios
+    //criar instï¿½ncias de domï¿½nios
 
     Cpf cpf;
     Nome nome;
@@ -347,7 +347,7 @@ void CntrApresentacaoInvestimentos::executar(const Cpf& cpf){
     bool apresentar = true;
 
     while(apresentar){
-        //apresentar opções
+        //apresentar opï¿½ï¿½es
 
         CLR_SCR;
 
@@ -357,7 +357,7 @@ void CntrApresentacaoInvestimentos::executar(const Cpf& cpf){
         cout << "Editar dados da carteira - " << EDITAR_CARTEIRA << endl;
         cout << "Excluir carteira - " << EXCLUIR_CARTEIRA << endl;
         cout << "Listar carteiras associadas a conta - " << LISTAR_CARTEIRAS << endl;
-        cout << endl << "SERVIÇOS DE ORDEM" << endl << endl;
+        cout << endl << "SERVIï¿½OS DE ORDEM" << endl << endl;
         cout << "Criar ordem - " << CRIAR_ORDEM << endl;
         cout << "Ler dados da ordem - " << LER_ORDEM << endl;
         cout << "Excluir ordem - " << EXCLUIR_ORDEM << endl;
@@ -386,6 +386,26 @@ void CntrApresentacaoInvestimentos::executar(const Cpf& cpf){
                 break;
 
             case LISTAR_CARTEIRAS: comando = new ComandoApresentacaoInvestimentosListarCarteiras();
+                comando->executar(cntrServicoInvestimentos, cpf);
+                delete comando;
+                break;
+
+            case CRIAR_ORDEM: comando = new ComandoApresentacaoInvestimentosCriarOrdem();
+                comando->executar(cntrServicoInvestimentos, cpf);
+                delete comando;
+                break;
+
+            case LER_ORDEM: comando = new ComandoApresentacaoInvestimentosLerOrdem();
+                comando->executar(cntrServicoInvestimentos, cpf);
+                delete comando;
+                break;
+
+            case EXCLUIR_ORDEM: comando = new ComandoApresentacaoInvestimentosExcluirOrdem();
+                comando->executar(cntrServicoInvestimentos, cpf);
+                delete comando;
+                break;
+
+            case LISTAR_ORDENS: comando = new ComandoApresentacaoInvestimentosListarOrdens();
                 comando->executar(cntrServicoInvestimentos, cpf);
                 delete comando;
                 break;

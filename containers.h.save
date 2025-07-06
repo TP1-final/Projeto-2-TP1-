@@ -5,26 +5,74 @@
 #include "entidades.h"
 
 #include <map>
+#include <list>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-//----------------------------------------------------------------------------------------
-// DeclaraÁ„o de classe container.
-//
-// DeclaraÁ„o adota padr„o de projeto Singleton.
+//Classe container Conta
+
+class ContainerConta {
+    private:
+        map<string, Conta> container;
+        static ContainerConta *instancia;
+        ContainerConta(){};
+    public:
+        static  ContainerConta* getInstancia(); // M√©todo para instanciar classe.
+        bool incluir(Conta); // M√©todos respons√°veis por prestar servi√ßos.
+        bool remover(Cpf);
+        bool pesquisar(Conta&);
+        bool atualizar(Conta);
+        map<string, Conta>::iterator find(const string& cpf) {
+        return container.find(cpf);
+    }
+
+    map<string, Conta>::iterator end() {
+        return container.end();
+    }
+};
+
+//Classe container Carteira
 
 class ContainerCarteira{
     private:
-        map<string, Carteira> container;                    // Mapa de usu·rios.
-        static ContainerCarteira *instancia;             // Ponteiro para inst‚ncia da classe.
-        ContainerCarteira(){};                           // Construtor.
+        map<string, Carteira> container;
+        static ContainerCarteira *instancia;
+        ContainerCarteira(){};
     public:
-        static  ContainerCarteira* getInstancia();       // MÈtodo para instanciar classe.
-        bool incluir(Carteira);                          // MÈtodos respons·veis por prestar serviÁos.
-        bool remover(Cpf);
-        bool pesquisar(Carteira*); 
+        static  ContainerCarteira* getInstancia(); // M√©todo para instanciar classe.
+        bool incluir(Carteira); // M√©todos respons√°veis por prestar servi√ßos.
+        bool remover(Codigo);
+        bool pesquisar(Carteira&);
         bool atualizar(Carteira);
+
+        map<string, Carteira>::iterator begin() {
+            return container.begin();
+        }
+
+        map<string, Carteira>::iterator end() {
+            return container.end();
+        }
 };
 
+//Classe container Ordem
 
+class ContainerOrdem{
+    private:
+        map<string, Ordem> container;
+        static ContainerOrdem *instancia;
+        ContainerOrdem(){};
+    public:
+        static  ContainerOrdem* getInstancia(); // M√©todo para instanciar classe.
+        bool incluir(Ordem); // M√©todos respons√°veis por prestar servi√ßos.
+        bool remover(Codigo);
+        bool pesquisar(Ordem&);
+        map<string, Ordem>::iterator begin() {
+            return container.begin();
+        }
+
+        map<string, Ordem>::iterator end() {
+            return container.end();
+        }
+};
 #endif // CONTAINERS_H_INCLUDED
