@@ -11,20 +11,56 @@
 
 #define CLR_SCR system("cls");
 
-// Declara��es de classes controladoras e implementa��es de m�todos.
+/**
+ * @file controladorasapresentacao.h
+ * @brief Define as classes controladoras da camada de apresentação do sistema.
+ *
+ * Este arquivo contém a declaração das classes que compõem a lógica de apresentação
+ * para autenticação, gerenciamento de contas e investimentos. Essas classes atuam como
+ * intermediárias entre a interface do usuário e os serviços de negócio.
+ */
 
-class CntrApresentacaoControle{
-    private:
-        Cpf cpf;
-        IApresentacaoAutenticacao *cntrApresentacaoAutenticacao;
-        IApresentacaoContas *cntrApresentacaoContas;
-        IApresentacaoInvestimentos *cntrApresentacaoInvestimentos;
+//=============================================================================
+// Classe CntrApresentacaoControle
+//=============================================================================
 
-    public:
-        void executar();
-        void setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao*);
-        void setCntrApresentacaoContas(IApresentacaoContas*);
-        void setCntrApresentacaoInvestimentos(IApresentacaoInvestimentos*);
+/**
+ * @class CntrApresentacaoControle
+ * @brief Controladora principal da camada de apresentação.
+ *
+ * Responsável por orquestrar o fluxo principal de execução do sistema,
+ * delegando as ações aos módulos específicos de autenticação, contas e investimentos.
+ */
+class CntrApresentacaoControle {
+private:
+    Cpf cpf; ///< CPF do usuário autenticado.
+    IApresentacaoAutenticacao *cntrApresentacaoAutenticacao; ///< Referência para controladora de autenticação.
+    IApresentacaoContas *cntrApresentacaoContas;             ///< Referência para controladora de contas.
+    IApresentacaoInvestimentos *cntrApresentacaoInvestimentos; ///< Referência para controladora de investimentos.
+
+public:
+    /**
+     * @brief Executa o fluxo principal da aplicação.
+     */
+    void executar();
+
+    /**
+     * @brief Define o módulo de autenticação.
+     * @param cntr Ponteiro para a implementação de autenticação.
+     */
+    void setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao* cntr);
+
+    /**
+     * @brief Define o módulo de contas.
+     * @param cntr Ponteiro para a implementação de contas.
+     */
+    void setCntrApresentacaoContas(IApresentacaoContas* cntr);
+
+    /**
+     * @brief Define o módulo de investimentos.
+     * @param cntr Ponteiro para a implementação de investimentos.
+     */
+    void setCntrApresentacaoInvestimentos(IApresentacaoInvestimentos* cntr);
 };
 
 inline void CntrApresentacaoControle::setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao *cntr){
@@ -32,68 +68,41 @@ inline void CntrApresentacaoControle::setCntrApresentacaoAutenticacao(IApresenta
 }
 
 inline void CntrApresentacaoControle::setCntrApresentacaoContas(IApresentacaoContas *cntr){
-            cntrApresentacaoContas = cntr;
+    cntrApresentacaoContas = cntr;
 }
 
 inline void CntrApresentacaoControle::setCntrApresentacaoInvestimentos(IApresentacaoInvestimentos *cntr){
     cntrApresentacaoInvestimentos = cntr;
 }
 
-//--------------------------------------------------------------------------------------------
+//=============================================================================
+// Classe CntrApresentacaoAutenticacao
+//=============================================================================
 
-class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao {
-    private:
-        IServicoAutenticacao *cntr;
-    public:
-        bool autenticar(Cpf*);
-        void setCntrServicoAutenticacao(IServicoAutenticacao*);
+/**
+ * @class CntrApresentacaoAutenticacao
+ * @brief Implementação da interface de apresentação para autenticação.
+ *
+ * Realiza a interação com o usuário para coletar dados de login e aciona
+ * o serviço de autenticação correspondente.
+ */
+class CntrApresentacaoAutenticacao : public IApresentacaoAutenticacao {
+private:
+    IServicoAutenticacao *cntr; ///< Referência para o serviço de autenticação.
+
+public:
+    bool autenticar(Cpf* cpf);
+    void setCntrServicoAutenticacao(IServicoAutenticacao* cntr);
 };
 
 inline void CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAutenticacao *cntr){
     this->cntr = cntr;
 }
 
-//------------------------------------------------------------------------------------------------------------------
+//=============================================================================
+// Classe CntrApresentacaoContas
+//=============================================================================
 
-class CntrApresentacaoContas: public IApresentacaoContas {
-    private:
-        IServicoContas *cntrServicoContas;
-        bool contaExcluida = false;
-    public:
-        void criarConta();
-        void executar(Cpf);
-        void setCntrServicoContas(IServicoContas*);
-        bool isContaExcluida(){ return contaExcluida; }
-        void resetContaExcluida(){ contaExcluida = false; }
-};
-
-inline void CntrApresentacaoContas::setCntrServicoContas(IServicoContas *cntr){
-    cntrServicoContas = cntr;
-}
-
-//------------------------------------------------------------------------------------------------------------------
-
- class CntrApresentacaoInvestimentos: public IApresentacaoInvestimentos{
-    private:
-        //c�digos dos servi�os
-        const static int CRIAR_CARTEIRA = 1;
-        const static int LER_CARTEIRA = 2;
-        const static int EDITAR_CARTEIRA = 3;
-        const static int EXCLUIR_CARTEIRA = 4;
-        const static int LISTAR_CARTEIRAS = 5;
-        const static int CRIAR_ORDEM = 6;
-        const static int LER_ORDEM = 7;
-        const static int EXCLUIR_ORDEM = 8;
-        const static int LISTAR_ORDENS = 9;
-
-        IServicoInvestimentos *cntrServicoInvestimentos; //refer�ncia para servidor
-    public:
-        void executar(const Cpf&);
-        void setCntrServicoInvestimentos(IServicoInvestimentos*);
- };
-
- inline void CntrApresentacaoInvestimentos::setCntrServicoInvestimentos(IServicoInvestimentos *cntr){
-    cntrServicoInvestimentos = cntr;
- }
-
-#endif // CONTROLADORASAPRESENTACAO_H_INCLUDED
+/**
+ * @class CntrApresentacaoContas
+ * @brief Imple*
