@@ -10,6 +10,25 @@ using namespace std;
 //--------------------------------------------------------------------------------------------
 // Declarações de classes stub.
 
-class StubServicoAutenticacao: public
+class StubServicoAutenticacao: public IServicoAutenticacao{
+private:
+    static const string INVALIDO;
+public:
+    bool autenticar(Cpf, Senha);
+
+};
+
+//------------------------------------------------------------------------------------------------
+
+class StubServicoContas: public IServicoContas{
+    private:
+        static const string INVALIDO;
+    public:
+        bool criarConta(Conta);
+        bool lerDados(Conta*);
+        bool editarDados(Conta);
+        bool excluirDados(Cpf);
+        
+};
 
 #endif // STUBS_H_INCLUDED

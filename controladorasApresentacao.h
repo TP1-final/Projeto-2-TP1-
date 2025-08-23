@@ -12,102 +12,105 @@
 #define CLR_SCR system("cls");
 
 /**
- * @class CntrApresentacaoControle
- * @brief Classe responsável por controlar o fluxo geral da aplicação na camada de apresentação.
+
+ * @file controladorasapresentacao.h
+ * @brief Define as classes controladoras da camada de apresentação do sistema.
  *
- * Essa classe representa o ponto de entrada da interface com o usuário.
- * Ela apresenta o menu principal e redireciona o usuário para os serviços disponíveis,
- * como autenticação, manipulação de contas e produtos financeiros.
+ * Este arquivo contém a declaração das classes que compõem a lógica de apresentação
+ * para autenticação, gerenciamento de contas e investimentos. Essas classes atuam como
+ * intermediárias entre a interface do usuário e os serviços de negócio.
+ */
+
+//=============================================================================
+// Classe CntrApresentacaoControle
+//=============================================================================
+
+/**
+ * @class CntrApresentacaoControle
+ * @brief Controladora principal da camada de apresentação.
+ *
+ * Responsável por orquestrar o fluxo principal de execução do sistema,
+ * delegando as ações aos módulos específicos de autenticação, contas e investimentos.
  */
 class CntrApresentacaoControle {
 private:
-    Cpf cpf;  ///< CPF do usuário autenticado
-    IApresentacaoAutenticacao *cntrApresentacaoAutenticacao;
-    // IApresentacaoPessoal *cntrApresentacaoPessoal;
-    // IApresentacaoProdutosFinanceiros *cntrApresentacaoProdutosFinanceiros;
+    Cpf cpf; ///< CPF do usuário autenticado.
+    IApresentacaoAutenticacao *cntrApresentacaoAutenticacao; ///< Referência para controladora de autenticação.
+    IApresentacaoContas *cntrApresentacaoContas;             ///< Referência para controladora de contas.
+    IApresentacaoInvestimentos *cntrApresentacaoInvestimentos; ///< Referência para controladora de investimentos.
 
 public:
     /**
-     * @brief Executa o menu principal da aplicação, coordenando os fluxos da camada de apresentação.
+     * @brief Executa o fluxo principal da aplicação.
+
      */
     void executar();
 
     /**
-     * @brief Define o controlador responsável pela autenticação.
-     * @param cntr Ponteiro para uma implementação de IApresentacaoAutenticacao.
+
+     * @brief Define o módulo de autenticação.
+     * @param cntr Ponteiro para a implementação de autenticação.
      */
     void setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao* cntr);
 
-    // void setCntrApresentacaoPessoal(IApresentacaoPessoal*);
-    // void setCntrApresentacaoProdutosFinanceiros(IApresentacaoProdutosFinanceiros*);
+    /**
+     * @brief Define o módulo de contas.
+     * @param cntr Ponteiro para a implementação de contas.
+     */
+    void setCntrApresentacaoContas(IApresentacaoContas* cntr);
+
+    /**
+     * @brief Define o módulo de investimentos.
+     * @param cntr Ponteiro para a implementação de investimentos.
+     */
+    void setCntrApresentacaoInvestimentos(IApresentacaoInvestimentos* cntr);
+
 };
 
 inline void CntrApresentacaoControle::setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao *cntr){
     cntrApresentacaoAutenticacao = cntr;
 }
 
+
+inline void CntrApresentacaoControle::setCntrApresentacaoContas(IApresentacaoContas *cntr){
+    cntrApresentacaoContas = cntr;
+}
+
+
+inline void CntrApresentacaoControle::setCntrApresentacaoInvestimentos(IApresentacaoInvestimentos *cntr){
+    cntrApresentacaoInvestimentos = cntr;
+}
+
+
+//=============================================================================
+// Classe CntrApresentacaoAutenticacao
+//=============================================================================
+
 /**
  * @class CntrApresentacaoAutenticacao
- * @brief Classe responsável pela lógica de autenticação na interface com o usuário.
+ * @brief Implementação da interface de apresentação para autenticação.
  *
- * Esta classe interage com o serviço de autenticação, solicitando CPF e senha ao usuário
- * e delegando a verificação ao serviço apropriado.
+ * Realiza a interação com o usuário para coletar dados de login e aciona
+ * o serviço de autenticação correspondente.
  */
 class CntrApresentacaoAutenticacao : public IApresentacaoAutenticacao {
 private:
-    IServicoAutenticacao *cntr; ///< Serviço de autenticação a ser utilizado.
+    IServicoAutenticacao *cntr; ///< Referência para o serviço de autenticação.
 
 public:
-    /**
-     * @brief Executa o processo de autenticação solicitando CPF e senha ao usuário.
-     * @param cpf Ponteiro para o CPF que será preenchido após autenticação.
-     * @return true se o usuário for autenticado com sucesso.
-     */
-    bool autenticar(Cpf* cpf) override;
+    bool autenticar(Cpf* cpf);
+    void setCntrServicoAutenticacao(IServicoAutenticacao* cntr);
 
-    /**
-     * @brief Define o serviço de autenticação a ser utilizado.
-     * @param cntr Ponteiro para uma implementação de IServicoAutenticacao.
-     */
-    void setCntrServicoAutenticacao(IServicoAutenticacao* cntr) override;
 };
 
 inline void CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAutenticacao *cntr){
     this->cntr = cntr;
 }
 
+//=============================================================================
+// Classe CntrApresentacaoContas
+//=============================================================================
+
 /**
  * @class CntrApresentacaoContas
- * @brief Classe responsável por apresentar ao usuário as opções de gerenciamento de contas.
- *
- * Essa classe permite criar contas e realizar operações relacionadas a contas, 
- * como visualização, edição e exclusão, através da interação com a camada de serviço.
- */
-class CntrApresentacaoContas : public IApresentacaoContas {
-private:
-    IServicoContas *cntrServicoContas; ///< Serviço responsável pelas operações de conta.
-
-public:
-    /**
-     * @brief Executa o menu de operações de conta para o usuário autenticado.
-     * @param cpf CPF do usuário autenticado.
-     */
-    void executar(Cpf cpf) override;
-
-    /**
-     * @brief Inicia o processo de criação de uma nova conta.
-     */
-    void criarConta();
-
-    /**
-     * @brief Define o serviço de contas a ser utilizado.
-     * @param cntrServicoContas Ponteiro para uma implementação de IServicoContas.
-     */
-    void setCntrServicoContas(IServicoContas* cntrServicoContas) override;
-};
-
-inline void CntrApresentacaoContas::setCntrServicoContas(IServicoContas *cntrServicoContas){
-    this->cntrServicoContas = cntrServicoContas;
-}
-
-#endif // CONTROLADORASAPRESENTACAO_H_INCLUDED
+ * @brief Imple*

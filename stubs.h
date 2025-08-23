@@ -2,6 +2,7 @@
 #define STUBS_H_INCLUDED
 
 #include "dominios.h"
+#include "entidades.h"
 #include "interfaces.h"
 #include <string>
 
@@ -16,6 +17,18 @@ private:
 public:
     bool autenticar(Cpf, Senha);
 
+};
+
+//------------------------------------------------------------------------------------------------
+
+class StubServicoContas: public IServicoContas{
+    private:
+        static const string INVALIDO;
+    public:
+        bool criarConta(Conta);
+        bool lerDados(Conta&);
+        bool editarDados(Conta);
+        bool excluirDados(Cpf);
 };
 
 #endif // STUBS_H_INCLUDED

@@ -6,6 +6,7 @@
 #include "entidades.h"
 #include "interfaces.h"
 #include "controladorasApresentacao.h"
+#include "controladorasServico.h"
 #include "stubs.h"
 
 using namespace std;
@@ -15,23 +16,34 @@ int main()
    //declaração de ponteiros e instâncias de controladoras
    CntrApresentacaoControle *cntrApresentacaoControle;
    IApresentacaoAutenticacao *cntrApresentacaoAutenticacao;
+   IApresentacaoContas *cntrApresentacaoContas;
+   IApresentacaoInvestimentos *cntrApresentacaoInvestimentos;
 
    cntrApresentacaoControle = new CntrApresentacaoControle();
    cntrApresentacaoAutenticacao = new CntrApresentacaoAutenticacao();
+   cntrApresentacaoContas = new CntrApresentacaoContas();
+   cntrApresentacaoInvestimentos = new CntrApresentacaoInvestimentos();
 
    //instanciar stubs
-   IServicoAutenticacao *stubServicoAutenticacao;
+   IServicoAutenticacao *cntrServicoAutenticacao;
+   IServicoContas *cntrServicoContas;
+   IServicoInvestimentos *cntrServicoInvestimentos;
 
-   stubServicoAutenticacao = new StubServicoAutenticacao();
+   cntrServicoAutenticacao = new CntrServicoAutenticacao();
+   cntrServicoContas = new CntrServicoContas();
+   cntrServicoInvestimentos = new CntrServicoInvestimentos();
 
-   //link entre controladoras e stubs
+   //link entre controladoras e stubs (futuramente controladoras de serviços)
    cntrApresentacaoControle->setCntrApresentacaoAutenticacao(cntrApresentacaoAutenticacao);
+   cntrApresentacaoControle->setCntrApresentacaoContas(cntrApresentacaoContas);
+   cntrApresentacaoControle->setCntrApresentacaoInvestimentos(cntrApresentacaoInvestimentos);
 
-   cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(stubServicoAutenticacao);
+    cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(cntrServicoAutenticacao);
+    cntrApresentacaoContas->setCntrServicoContas(cntrServicoContas);
+    cntrApresentacaoInvestimentos->setCntrServicoInvestimentos(cntrServicoInvestimentos);
 
    //solicitar serviço
    cntrApresentacaoControle->executar();
-
 
     return 0;
 }
