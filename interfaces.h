@@ -13,13 +13,16 @@
 #include "dominios.h"
 #include "entidades.h"
 
+
 /// Forward declarations para as interfaces de apresentação e serviço.
+
 class IApresentacaoAutenticacao;
 class IApresentacaoContas;
 class IApresentacaoInvestimentos;
 class IServicoAutenticacao;
 class IServicoContas;
 class IServicoInvestimentos;
+
 
 //=============================================================================
 // Interfaces da camada de apresentação
@@ -28,21 +31,26 @@ class IServicoInvestimentos;
 /**
  * @interface IApresentacaoAutenticacao
  * @brief Interface da apresentação responsável pela autenticação do usuário.
+
  */
 class IApresentacaoAutenticacao {
 public:
     /**
+
      * @brief Inicia o processo de autenticação.
      * @param cpf Ponteiro para objeto Cpf onde o valor autenticado será armazenado.
      * @return true se a autenticação for bem-sucedida.
+
      */
     virtual bool autenticar(Cpf* cpf) = 0;
 
     /**
+
      * @brief Define o serviço de autenticação associado à apresentação.
      * @param cntr Ponteiro para a instância do serviço.
      */
     virtual void setCntrServicoAutenticacao(IServicoAutenticacao* cntr) = 0;
+
 
     /// Destrutor virtual.
     virtual ~IApresentacaoAutenticacao() {}
@@ -50,11 +58,14 @@ public:
 
 /**
  * @interface IApresentacaoContas
+
  * @brief Interface da apresentação responsável pela gestão de contas de usuário.
+
  */
 class IApresentacaoContas {
 public:
     /**
+
      * @brief Cria uma nova conta.
      */
     virtual void criarConta() = 0;
@@ -115,14 +126,17 @@ public:
 /**
  * @interface IServicoAutenticacao
  * @brief Interface de serviço responsável pela autenticação.
+
  */
 class IServicoAutenticacao {
 public:
     /**
+
      * @brief Autentica um usuário com CPF e senha.
      * @param cpf CPF do usuário.
      * @param senha Senha fornecida.
      * @return true se a autenticação for bem-sucedida.
+
      */
     virtual bool autenticar(Cpf cpf, Senha senha) = 0;
 
@@ -132,6 +146,7 @@ public:
 
 /**
  * @interface IServicoContas
+
  * @brief Interface de serviço responsável pela gestão de contas.
  */
 class IServicoContas {
@@ -181,6 +196,7 @@ public:
 
     /// Destrutor virtual.
     virtual ~IServicoInvestimentos() {}
+
 };
 
 #endif // INTERFACES_H_INCLUDED

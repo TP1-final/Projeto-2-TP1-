@@ -125,6 +125,7 @@ public:
      */
     bool executar(Ordem &ordem, int codigoOperacao) override;
 
+
     /**
      * @brief Lista todas as carteiras associadas a um CPF.
      * @param cpf CPF do usuário.
@@ -138,6 +139,7 @@ public:
      * @return Lista de ordens associadas.
      */
     std::list<Ordem> listarOrdens(Codigo codigo) override;
+
 };
 
 #endif // CONTROLADORASSERVICO_H_INCLUDED

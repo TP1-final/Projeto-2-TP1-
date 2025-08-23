@@ -12,6 +12,7 @@
 #define CLR_SCR system("cls");
 
 /**
+
  * @file controladorasapresentacao.h
  * @brief Define as classes controladoras da camada de apresentação do sistema.
  *
@@ -41,10 +42,12 @@ private:
 public:
     /**
      * @brief Executa o fluxo principal da aplicação.
+
      */
     void executar();
 
     /**
+
      * @brief Define o módulo de autenticação.
      * @param cntr Ponteiro para a implementação de autenticação.
      */
@@ -61,19 +64,23 @@ public:
      * @param cntr Ponteiro para a implementação de investimentos.
      */
     void setCntrApresentacaoInvestimentos(IApresentacaoInvestimentos* cntr);
+
 };
 
 inline void CntrApresentacaoControle::setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao *cntr){
     cntrApresentacaoAutenticacao = cntr;
 }
 
+
 inline void CntrApresentacaoControle::setCntrApresentacaoContas(IApresentacaoContas *cntr){
     cntrApresentacaoContas = cntr;
 }
 
+
 inline void CntrApresentacaoControle::setCntrApresentacaoInvestimentos(IApresentacaoInvestimentos *cntr){
     cntrApresentacaoInvestimentos = cntr;
 }
+
 
 //=============================================================================
 // Classe CntrApresentacaoAutenticacao
@@ -93,6 +100,7 @@ private:
 public:
     bool autenticar(Cpf* cpf);
     void setCntrServicoAutenticacao(IServicoAutenticacao* cntr);
+
 };
 
 inline void CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAutenticacao *cntr){
