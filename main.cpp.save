@@ -38,8 +38,8 @@ int main()
    cntrApresentacaoControle->setCntrApresentacaoContas(cntrApresentacaoContas);
    cntrApresentacaoControle->setCntrApresentacaoInvestimentos(cntrApresentacaoInvestimentos);
 
-    cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(stubServicoAutenticacao);
-    cntrApresentacaoContas->setCntrServicoContas(stubServicoContas);
+    cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(cntrServicoAutenticacao);
+    cntrApresentacaoContas->setCntrServicoContas(cntrServicoContas);
     cntrApresentacaoInvestimentos->setCntrServicoInvestimentos(cntrServicoInvestimentos);
 
    //solicitar serviço
