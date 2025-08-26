@@ -311,15 +311,12 @@ ifstream Arquivo("DADOS_HISTORICOS.TXT");                // Abre arquivo.
 
 while (getline(Arquivo, linha)) { // Ler cada linha do arquivo.
     if(codigo.compare(linha.substr(12,12)) == 0){
-        cout << "DATA        = " << linha.substr(2,8) << "\n";
-        cout << "PRECO_MEDIO = " << std::stod(linha.substr(113,13))/100 << "\n";
         string dataAtivo = linha.substr(2,8);
         if(ordem.getData().getValor().compare(dataAtivo) == 0){
             float precoMedio = std::stof(linha.substr(113,13))/100;
             float precoOrdem = precoMedio * ordem.getQuantidade().getValor();
             Dinheiro preco;
             preco.setValor(precoOrdem);
-            cout << "PRECO DA ORDEM DEFINIDO:" << precoOrdem << endl;
             ordem.setPreco(preco);
             if(container->incluir(ordem)){
                 Arquivo.close();
@@ -407,6 +404,7 @@ void ComandoApresentacaoInvestimentosCriarOrdem::executar(IServicoInvestimentos 
 
 
     if(cntrServicoInvestimentos->executar(ordem, ComandoApresentacaoInvestimentos::CRIAR_ORDEM)){
+        cout << "PRECO DA ORDEM DEFINIDO:" << ordem.getPreco().getValor() << endl;
         cout << "Ordem criada com sucesso! Pressione qualquer tecla para continuar...";
     } else {
         cout << "Falha ao criar ordem! Pressione qualquer tecla para continuar...";

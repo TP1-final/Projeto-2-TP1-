@@ -526,3 +526,102 @@
 1751844408 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\trabalho 2\projeto_tp1\containers.cpp
 	"containers.h"
 
+1756229457 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\comandos.cpp
+	"comandos.h"
+	<list>
+
+1756229457 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\comandos.h
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	"containers.h"
+	<stdexcept>
+	<iostream>
+	<cstdlib>
+	<conio.h>
+
+1756229457 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\dominios.h
+	<stdexcept>
+	<regex>
+	<string>
+	<unordered_set>
+	<list>
+
+1756229457 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\entidades.h
+	"dominios.h"
+
+1756229458 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\interfaces.h
+	"dominios.h"
+	"entidades.h"
+
+1756229457 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\containers.h
+	"dominios.h"
+	"entidades.h"
+	<map>
+	<list>
+	<bits/stdc++.h>
+
+1756229457 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\containers.cpp
+	"containers.h"
+
+1756229457 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\controladorasapresentacao.cpp
+	"controladorasApresentacao.h"
+	"comandos.h"
+
+1756229457 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\controladorasapresentacao.h
+	<conio.h>
+	<iostream>
+	<string.h>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+
+1756229457 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\controladorasservico.cpp
+	"controladorasServico.h"
+	"containers.h"
+	"comandos.h"
+
+1756229457 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\controladorasservico.h
+	<conio.h>
+	<iostream>
+	<string.h>
+	<list>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	"containers.h"
+
+1756229457 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\dominios.cpp
+	"dominios.h"
+
+1756229457 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\entidades.cpp
+	"entidades.h"
+	"containers.h"
+
+1756229458 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\main.cpp
+	<string>
+	<stdexcept>
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	"controladorasApresentacao.h"
+	"controladorasServico.h"
+	"stubs.h"
+
+1756229458 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\stubs.h
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	<string>
+
+1756229458 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\stubs.cpp
+	"stubs.h"
+
+1756229458 source:c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\testes.cpp
+	"testes.h"
+
+1756229458 c:\users\etec0\onedrive\documentos\arquivos mateus\c”digos c++\projeto tp1\projeto-2-tp1-\testes.h
+	"dominios.h"
+	"entidades.h"
+
